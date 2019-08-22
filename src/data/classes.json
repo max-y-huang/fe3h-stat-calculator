@@ -30,5 +30,86 @@
       "hp": 0, "str": 0, "mag": 0, "dex": 0, "spd": 0,
       "lck": 0, "def": 0, "res": 0, "cha": 0
     }
+  },
+  "dancer": {
+    "name": "Dancer",
+    "tier": "starter",
+    "bases": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 0, "mv": 6
+    },
+    "growths": {
+      "hp": 20, "str": -5, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": -5, "res": -5, "cha": 10
+    },
+    "boosts": {
+      "hp": 0, "str": 1, "mag": 0, "dex": 3, "spd": 3,
+      "lck": 0, "def": 2, "res": 1, "cha": 2
+    }
+  },
+
+  "myrmidon": {
+    "name": "Myrmidon",
+    "tier": "beginner",
+    "bases": {
+      "hp": 20, "str": 7, "mag": 3, "dex": 6, "spd": 6,
+      "lck": 4, "def": 5, "res": 2, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 10, "str": 0, "mag": 0, "dex": 0, "spd": 5,
+      "lck": 0, "def": 0, "res": -5, "cha": 5
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 0, "spd": 1,
+      "lck": 0, "def": 0, "res": 0, "cha": 0
+    }
+  },
+  "soldier": {
+    "name": "Soldier",
+    "tier": "beginner",
+    "bases": {
+      "hp": 20, "str": 8, "mag": 3, "dex": 6, "spd": 6,
+      "lck": 4, "def": 5, "res": 2, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 10, "str": 0, "mag": 0, "dex": 5, "spd": 0,
+      "lck": 0, "def": 0, "res": -5, "cha": 5
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 1, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 0
+    }
+  },
+  "fighter": {
+    "name": "Fighter",
+    "tier": "beginner",
+    "bases": {
+      "hp": 20, "str": 8, "mag": 3, "dex": 6, "spd": 6,
+      "lck": 4, "def": 5, "res": 2, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 10, "str": 5, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": -5, "cha": 5
+    },
+    "boosts": {
+      "hp": 0, "str": 1, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 0
+    }
+  },
+  "monk": {
+    "name": "Monk",
+    "tier": "beginner",
+    "bases": {
+      "hp": 20, "str": 4, "mag": 8, "dex": 6, "spd": 6,
+      "lck": 4, "def": 3, "res": 4, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 5, "str": 0, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 5, "cha": 5
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 1, "cha": 0
+    }
   }
 }

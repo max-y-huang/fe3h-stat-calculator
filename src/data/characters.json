@@ -11,5 +11,110 @@
       "hp": 45, "str": 45, "mag": 35, "dex": 45, "spd": 45,
       "lck": 45, "def": 35, "res": 30, "cha": 45
     }
+  },
+  
+  "edelgard": {
+    "name": "Edelgard",
+    "class": "noble",
+    "level": 1,
+    "bases": {
+      "hp": 29, "str": 13, "mag": 6, "dex": 5, "spd": 8,
+      "lck": 5, "def": 6, "res": 4, "cha": 10
+    },
+    "growths": {
+      "hp": 40, "str": 55, "mag": 45, "dex": 45, "spd": 40,
+      "lck": 30, "def": 35, "res": 35, "cha": 60
+    }
+  },
+  "hubert": {
+    "name": "Hubert",
+    "class": "noble",
+    "level": 1,
+    "bases": {
+      "hp": 22, "str": 6, "mag": 12, "dex": 6, "spd": 7,
+      "lck": 6, "def": 4, "res": 7, "cha": 6
+    },
+    "growths": {
+      "hp": 35, "str": 30, "mag": 55, "dex": 45, "spd": 45,
+      "lck": 35, "def": 25, "res": 40, "cha": 35
+    }
+  },
+  "dorothea": {
+    "name": "Dorothea",
+    "class": "noble",
+    "level": 1,
+    "bases": {
+      "hp": 24, "str": 5, "mag": 11, "dex": 6, "spd": 7,
+      "lck": 6, "def": 4, "res": 7, "cha": 8
+    },
+    "growths": {
+      "hp": 40, "str": 20, "mag": 40, "dex": 45, "spd": 40,
+      "lck": 35, "def": 15, "res": 35, "cha": 40
+    }
+  },
+  "ferdinand": {
+    "name": "Ferdinand",
+    "class": "commoner",
+    "level": 1,
+    "bases": {
+      "hp": 28, "str": 8, "mag": 5, "dex": 6, "spd": 8,
+      "lck": 6, "def": 6, "res": 2, "cha": 7
+    },
+    "growths": {
+      "hp": 50, "str": 45, "mag": 20, "dex": 40, "spd": 50,
+      "lck": 40, "def": 35, "res": 20, "cha": 40
+    }
+  },
+  "bernadetta": {
+    "name": "Bernadetta",
+    "class": "noble",
+    "level": 1,
+    "bases": {
+      "hp": 25, "str": 8, "mag": 5, "dex": 7, "spd": 7,
+      "lck": 5, "def": 4, "res": 2, "cha": 6
+    },
+    "growths": {
+      "hp": 35, "str": 35, "mag": 20, "dex": 55, "spd": 50,
+      "lck": 25, "def": 20, "res": 30, "cha": 35
+    }
+  },
+  "caspar": {
+    "name": "Caspar",
+    "class": "noble",
+    "level": 1,
+    "bases": {
+      "hp": 26, "str": 9, "mag": 3, "dex": 5, "spd": 6,
+      "lck": 8, "def": 6, "res": 2, "cha": 4
+    },
+    "growths": {
+      "hp": 55, "str": 45, "mag": 25, "dex": 45, "spd": 45,
+      "lck": 40, "def": 30, "res": 20, "cha": 25
+    }
+  },
+  "petra": {
+    "name": "Petra",
+    "class": "commoner",
+    "level": 1,
+    "bases": {
+      "hp": 25, "str": 9, "mag": 3, "dex": 7, "spd": 10,
+      "lck": 7, "def": 5, "res": 2, "cha": 6
+    },
+    "growths": {
+      "hp": 45, "str": 40, "mag": 25, "dex": 50, "spd": 60,
+      "lck": 45, "def": 35, "res": 15, "cha": 35
+    }
+  },
+  "linhardt": {
+    "name": "Linhardt",
+    "class": "noble",
+    "level": 1,
+    "bases": {
+      "hp": 24, "str": 5, "mag": 10, "dex": 6, "spd": 5,
+      "lck": 7, "def": 5, "res": 9, "cha": 3
+    },
+    "growths": {
+      "hp": 30, "str": 30, "mag": 45, "dex": 40, "spd": 40,
+      "lck": 45, "def": 30, "res": 45, "cha": 20
+    }
   }
 }
