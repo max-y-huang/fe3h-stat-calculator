@@ -4,6 +4,7 @@ import { Sidebar } from 'semantic-ui-react';
 
 import StatsWrapper from './StatsWrapper';
 import ClassChangeWrapper from './ClassChangeWrapper';
+import CharacterSelect from './CharacterSelect';
 
 import './css/app.css';
 
@@ -16,17 +17,26 @@ class App extends React.Component {
     super(props);
     
     this.state = {
-      sidebarOpen: false,
+      classChangeOpen: false,
+      characterSelectOpen: false,
       characterId: 'byleth',
       classChanges: []
     };
   }
 
   // Passed to StatsWrapper for 'Edit Class Changes' button.
-  openSidebar = () => {
+  openClassChange = () => {
 
     this.setState({
-      sidebarOpen: true
+      classChangeOpen: true
+    });
+  }
+
+  // Passed to CharacterSelect for 'Select Character' button.
+  openCharacterSelect = () => {
+
+    this.setState({
+      characterSelectOpen: true
     });
   }
 
@@ -35,7 +45,16 @@ class App extends React.Component {
 
     this.setState({
       classChanges: newClassChanges,
-      sidebarOpen: false
+      classChangeOpen: false
+    });
+  }
+
+  // Passed to CharacterSelect as an on modify callback.
+  applyCharacterSelect = (newCharacterId) => {
+
+    this.setState({
+      characterId: newCharacterId,
+      characterSelectOpen: false
     });
   }
 
@@ -45,11 +64,15 @@ class App extends React.Component {
 
     return (
       <div>
-        <Sidebar className='side-bar' animation='overlay' visible={this.state.sidebarOpen}>
+        <Sidebar className='side-bar' animation='overlay' visible={this.state.classChangeOpen} style={{backgroundColor: '#f1f1f1'}}>
           <ClassChangeWrapper character={character} appliedFunc={this.applyClassChanges} />
         </Sidebar>
 
-        <StatsWrapper character={character} classChanges={this.state.classChanges} openSidebarFunc={this.openSidebar} />
+        <Sidebar className='side-bar' animation='overlay' visible={this.state.characterSelectOpen} style={{backgroundColor: '#ffffff'}}>
+          <CharacterSelect appliedFunc={this.applyCharacterSelect} />
+        </Sidebar>
+
+        <StatsWrapper character={character} classChanges={this.state.classChanges} openCharacterSelectFunc={this.openCharacterSelect} openClassChangeFunc={this.openClassChange} />
       </div>
     );
   }

@@ -9,12 +9,12 @@
   padding-left: 0.5em;
 }
 
-.stat-grid-wrapper > .grid > .column > div {
+.stat-grid-wrapper > .grid > .column > * {
 
   margin-bottom: 0.75em;
 }
 
-.stat-grid-wrapper > .grid > .column > div:last-child {
+.stat-grid-wrapper > .grid > .column > *:last-child {
 
   margin-bottom: 0;
 }

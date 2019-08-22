@@ -41,7 +41,7 @@
   },
   "dorothea": {
     "name": "Dorothea",
-    "class": "noble",
+    "class": "commoner",
     "level": 1,
     "bases": {
       "hp": 24, "str": 5, "mag": 11, "dex": 6, "spd": 7,
@@ -54,7 +54,7 @@
   },
   "ferdinand": {
     "name": "Ferdinand",
-    "class": "commoner",
+    "class": "noble",
     "level": 1,
     "bases": {
       "hp": 28, "str": 8, "mag": 5, "dex": 6, "spd": 8,
