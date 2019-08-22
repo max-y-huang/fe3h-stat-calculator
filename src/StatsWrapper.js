@@ -18,6 +18,12 @@ class StatsWrapper extends React.Component {
     }
   }
 
+  onReset = () => {
+
+    // TODO: reset StatsWrapper
+    console.log('reset StatsWrapper');
+  }
+
   formatClassChanges = () => {
 
     let classChanges = this.props.classChanges.slice();
@@ -113,6 +119,13 @@ class StatsWrapper extends React.Component {
         </Grid.Column>
       );
     });
+  }
+
+  componentDidUpdate(prevProps, prevStates) {
+
+    if (prevProps.resetFlag !== this.props.resetFlag) {
+      this.onReset();
+    }
   }
 
   render() {

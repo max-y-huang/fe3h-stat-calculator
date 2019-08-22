@@ -17,11 +17,19 @@ class App extends React.Component {
     super(props);
     
     this.state = {
+      resetFlag: 0,  // Passed to children as props. Signals a reset.
       classChangeOpen: false,
       characterSelectOpen: false,
       characterId: 'byleth',
       classChanges: []
     };
+  }
+
+  reset = () => {
+
+    this.setState((state) => ({
+      resetFlag: state.resetFlag + 1
+    }));
   }
 
   // Passed to StatsWrapper for 'Edit Class Changes' button.
@@ -52,6 +60,8 @@ class App extends React.Component {
   // Passed to CharacterSelect as an on modify callback.
   applyCharacterSelect = (newCharacterId) => {
 
+    this.reset();
+
     this.setState({
       characterId: newCharacterId,
       characterSelectOpen: false
@@ -65,14 +75,14 @@ class App extends React.Component {
     return (
       <div>
         <Sidebar className='side-bar' animation='overlay' visible={this.state.classChangeOpen} style={{backgroundColor: '#f1f1f1'}}>
-          <ClassChangeWrapper character={character} appliedFunc={this.applyClassChanges} />
+          <ClassChangeWrapper character={character} resetFlag={this.state.resetFlag} appliedFunc={this.applyClassChanges} />
         </Sidebar>
 
         <Sidebar className='side-bar' animation='overlay' visible={this.state.characterSelectOpen} style={{backgroundColor: '#ffffff'}}>
           <CharacterSelect appliedFunc={this.applyCharacterSelect} />
         </Sidebar>
 
-        <StatsWrapper character={character} classChanges={this.state.classChanges} openCharacterSelectFunc={this.openCharacterSelect} openClassChangeFunc={this.openClassChange} />
+        <StatsWrapper character={character} classChanges={this.state.classChanges} resetFlag={this.state.resetFlag} openCharacterSelectFunc={this.openCharacterSelect} openClassChangeFunc={this.openClassChange} />
       </div>
     );
   }

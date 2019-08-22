@@ -34,7 +34,7 @@ class ClassChangeWrapper extends React.Component {
           </Button>
         }
         body={
-          <ClassChangeInput ref={this.classChangeRef} character={character} />
+          <ClassChangeInput ref={this.classChangeRef} character={character} resetFlag={this.props.resetFlag} />
         }
       />
     );

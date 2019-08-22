@@ -26,6 +26,12 @@ class ClassChangeInput extends React.Component {
     }
   }
 
+  onReset = () => {
+
+    // TODO: reset ClassChangeInput
+    console.log('reset ClassChangeInput');
+  }
+
   getValues = () => {
 
     let values = this.state.values;
@@ -121,11 +127,6 @@ class ClassChangeInput extends React.Component {
     });
   }
 
-  componentDidMount() {
-
-    this.setClassOptions();
-  }
-
   renderClassChangeSelect = () => {
 
     return [...Array(5).keys()].map((i) => {  // Loop through numeric indices as a map() function
@@ -137,6 +138,18 @@ class ClassChangeInput extends React.Component {
         />
       )
     });
+  }
+
+  componentDidMount() {
+
+    this.setClassOptions();
+  }
+
+  componentDidUpdate(prevProps, prevStates) {
+
+    if (prevProps.resetFlag !== this.props.resetFlag) {
+      this.onReset();
+    }
   }
 
   render() {
