@@ -13,15 +13,20 @@ class StatsWrapper extends React.Component {
 
     super(props);
 
+    this.levelInputRef = React.createRef();
+
     this.state = {
-      finalLevel: 50
+      finalLevel: 1
     }
   }
 
   onReset = () => {
 
-    // TODO: reset StatsWrapper
-    console.log('reset StatsWrapper');
+    // reset final level
+    this.levelInputRef.current.value = 1;
+    this.setState({
+      finalLevel: 1
+    });
   }
 
   formatClassChanges = () => {
@@ -46,7 +51,7 @@ class StatsWrapper extends React.Component {
 
     // Add class change for initial class.
     classChanges.splice(0, 0, {
-      level: character['level'],
+      level: 1,
       class: character['class']
     });
 
@@ -148,9 +153,9 @@ class StatsWrapper extends React.Component {
 
             <Segment>
               <Label attached='top left' color='yellow'>Input</Label>
-              <Input onChange={this.setFinalLevel} fluid defaultValue={50} labelPosition='left' style={{marginBottom: '1em'}}> {/* TODO: Remove inline style */}
+              <Input onChange={this.setFinalLevel} fluid defaultValue={1} labelPosition='left' style={{marginBottom: '1em'}}> {/* TODO: Remove inline style */}
                 <Label color='blue'>Level</Label>
-                <input />
+                <input ref={this.levelInputRef} />
               </Input>
               <Button icon labelPosition='left' color='blue' fluid onClick={this.props.openClassChangeFunc}> {/* Passed from App */}
                 <Icon name='edit' />

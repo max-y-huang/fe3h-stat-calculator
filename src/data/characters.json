@@ -2,7 +2,6 @@
   "byleth": {
     "name": "Byleth",
     "class": "commoner",
-    "level": 1,
     "bases": {
       "hp": 27, "str": 13, "mag": 6, "dex": 9, "spd": 8,
       "lck": 8, "def": 6, "res": 6, "cha": 7
@@ -16,7 +15,6 @@
   "edelgard": {
     "name": "Edelgard",
     "class": "noble",
-    "level": 1,
     "bases": {
       "hp": 29, "str": 13, "mag": 6, "dex": 5, "spd": 8,
       "lck": 5, "def": 6, "res": 4, "cha": 10
@@ -29,7 +27,6 @@
   "hubert": {
     "name": "Hubert",
     "class": "noble",
-    "level": 1,
     "bases": {
       "hp": 22, "str": 6, "mag": 12, "dex": 6, "spd": 7,
       "lck": 6, "def": 4, "res": 7, "cha": 6
@@ -42,7 +39,6 @@
   "dorothea": {
     "name": "Dorothea",
     "class": "commoner",
-    "level": 1,
     "bases": {
       "hp": 24, "str": 5, "mag": 11, "dex": 6, "spd": 7,
       "lck": 6, "def": 4, "res": 7, "cha": 8
@@ -55,7 +51,6 @@
   "ferdinand": {
     "name": "Ferdinand",
     "class": "noble",
-    "level": 1,
     "bases": {
       "hp": 28, "str": 8, "mag": 5, "dex": 6, "spd": 8,
       "lck": 6, "def": 6, "res": 2, "cha": 7
@@ -68,7 +63,6 @@
   "bernadetta": {
     "name": "Bernadetta",
     "class": "noble",
-    "level": 1,
     "bases": {
       "hp": 25, "str": 8, "mag": 5, "dex": 7, "spd": 7,
       "lck": 5, "def": 4, "res": 2, "cha": 6
@@ -81,7 +75,6 @@
   "caspar": {
     "name": "Caspar",
     "class": "noble",
-    "level": 1,
     "bases": {
       "hp": 26, "str": 9, "mag": 3, "dex": 5, "spd": 6,
       "lck": 8, "def": 6, "res": 2, "cha": 4
@@ -94,7 +87,6 @@
   "petra": {
     "name": "Petra",
     "class": "commoner",
-    "level": 1,
     "bases": {
       "hp": 25, "str": 9, "mag": 3, "dex": 7, "spd": 10,
       "lck": 7, "def": 5, "res": 2, "cha": 6
@@ -107,7 +99,6 @@
   "linhardt": {
     "name": "Linhardt",
     "class": "noble",
-    "level": 1,
     "bases": {
       "hp": 24, "str": 5, "mag": 10, "dex": 6, "spd": 5,
       "lck": 7, "def": 5, "res": 9, "cha": 3

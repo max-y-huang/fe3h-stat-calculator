@@ -17,19 +17,13 @@ class ClassChangeInput extends React.Component {
     this.state = {
       classOptions: [],  // set in componentDidMount()
       values: {
-        '0': { 'level': 0, 'class': null },
-        '1': { 'level': 0, 'class': null },
-        '2': { 'level': 0, 'class': null },
-        '3': { 'level': 0, 'class': null },
-        '4': { 'level': 0, 'class': null }
+        '0': { 'level': 1, 'class': null },
+        '1': { 'level': 1, 'class': null },
+        '2': { 'level': 1, 'class': null },
+        '3': { 'level': 1, 'class': null },
+        '4': { 'level': 1, 'class': null }
       }
     }
-  }
-
-  onReset = () => {
-
-    // TODO: reset ClassChangeInput
-    console.log('reset ClassChangeInput');
   }
 
   getValues = () => {
@@ -132,7 +126,7 @@ class ClassChangeInput extends React.Component {
     return [...Array(5).keys()].map((i) => {  // Loop through numeric indices as a map() function
       return (
         <ClassChangeSelect
-          key={i} index={i} options={this.state.classOptions} modifyFunc={this.modifyAttr}
+          key={i} index={i} options={this.state.classOptions} resetFlag={this.props.resetFlag} modifyFunc={this.modifyAttr}
           active={this.getActive(i)}
           level={this.getLevel(i)}
         />
@@ -145,13 +139,6 @@ class ClassChangeInput extends React.Component {
     this.setClassOptions();
   }
 
-  componentDidUpdate(prevProps, prevStates) {
-
-    if (prevProps.resetFlag !== this.props.resetFlag) {
-      this.onReset();
-    }
-  }
-
   render() {
 
     return(
@@ -159,8 +146,7 @@ class ClassChangeInput extends React.Component {
 
         <Grid.Column>
           <Segment>
-            {/* Let the minimum level be the unit's base level. */}
-            <ClassChangeSlider ref={this.sliderRef} min={this.props.character['level']} max={50} modifyFunc={this.modifyAttr} />
+            <ClassChangeSlider ref={this.sliderRef} min={1} max={50} resetFlag={this.props.resetFlag} modifyFunc={this.modifyAttr} />
           </Segment>
         </Grid.Column>
         
@@ -179,14 +165,22 @@ class ClassChangeInput extends React.Component {
 class ClassChangeSlider extends React.Component {
 
   constructor(props) {
+
     super(props);
 
-    let min = this.props.min;
     this.state = {
-      values: [
-        min, min, min, min, min  // Start with all sliders at the minimum value.
-      ]
-    }
+      values: [ 1, 1, 1, 1, 1 ]
+    };
+  }
+
+  onReset = () => {
+
+    this.setState({
+      values: [ 1, 1, 1, 1, 1 ]
+    }, () => {
+
+      this.onModify();
+    });
   }
 
   onModify = () => {
@@ -203,7 +197,12 @@ class ClassChangeSlider extends React.Component {
 
   componentDidUpdate(prevProps, prevStates) {
 
-    if (prevStates.values !== this.state.values) {
+    if (prevProps.resetFlag !== this.props.resetFlag) {
+      this.onReset();
+      this.onModify();
+    }
+
+    else if (prevStates.values !== this.state.values) {
       this.onModify();
     }
   }
@@ -236,9 +235,37 @@ class ClassChangeSlider extends React.Component {
 
 class ClassChangeSelect extends React.Component {
 
+  constructor(props) {
+
+    super(props);
+
+    this.dropdownRef = React.createRef();
+  }
+
+  onReset = () => {
+
+    if (!this.dropdownRef.current) {
+      return;
+    }
+
+    this.dropdownRef.current.setState({
+      value: null  // Changing this value modifies the dropdown value.
+    }, () => {
+
+      this.props.modifyFunc(this.props.index, 'class', null);  // Passed from ClassChangeInput.
+    });
+  }
+
   onModify = (e, { value }) => {
 
     this.props.modifyFunc(this.props.index, 'class', value);  // Passed from ClassChangeInput.
+  }
+
+  componentDidUpdate(prevProps, prevStates) {
+
+    if (prevProps.resetFlag !== this.props.resetFlag) {
+      this.onReset();
+    }
   }
 
   render() {
@@ -250,7 +277,7 @@ class ClassChangeSelect extends React.Component {
     return (
       <Form.Field>
         <Label color='pink'>Level {this.props.level}</Label>
-        <Dropdown placeholder='No Class Change' fluid search selection options={this.props.options} onChange={this.onModify}/>
+        <Dropdown ref={this.dropdownRef} placeholder='No Class Change' fluid search selection options={this.props.options} onChange={this.onModify}/>
       </Form.Field>
     )
   }
