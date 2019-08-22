@@ -1,0 +1,34 @@
+{
+  "noble": {
+    "name": "Noble",
+    "tier": "starter",
+    "bases": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 5, "mv": 0
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 0, "mv": 0
+    }
+  },
+  "commoner": {
+    "name": "Commoner",
+    "tier": "starter",
+    "bases": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 0, "mv": 0
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 0, "mv": 0
+    }
+  }
+}

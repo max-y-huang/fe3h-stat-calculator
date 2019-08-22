@@ -1,1 +1,1 @@
-# fe3h-stat-calculator
+# Fire Emblem Three Houses - Stat Calculator

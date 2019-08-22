@@ -1,0 +1,40 @@
+
+.window-wrapper {
+
+  position: absolute;
+  top: 1em;
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+}
+
+.body-segment {
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-segment {
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-segment > div:nth-child(1) {
+
+  position: relative;
+}
+
+.header-segment > div:nth-child(1) > div {
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-segment > div:nth-child(2) button:last-child {
+
+  margin-right: 0;
+}
