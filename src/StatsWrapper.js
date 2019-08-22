@@ -98,13 +98,13 @@ class StatsWrapper extends React.Component {
   renderStatDisplays = () => {
     
     // Outer array = columns, inner arrays = rows.
-    let indices = [
+    let grid = [
       [ 'hp', 'str', 'mag', 'dex', 'spd' ],
       [ 'mv', 'lck', 'def', 'res', 'cha' ]
     ];
 
     // Render StatDisplay objects enclosed by Grid.Column objects.
-    return indices.map((col, i) => {
+    return grid.map((col, i) => {
       return (
         <Grid.Column key={i}>
           {col.map((cell) => {

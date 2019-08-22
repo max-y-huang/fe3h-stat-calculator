@@ -11,26 +11,29 @@ class CharacterSelect extends React.Component {
 
   renderCharacterItems = () => {
 
-    let cols = [ [], [] ];
+    let grid = [ [], [] ]; // Outer array = columns, inner arrays = rows.
 
-    let indexCounter = 0;
+    let indexCounter = 0;  // Counts index when looping through characters
 
-    for (var key in characters) {
+    for (var name in characters) {
 
-      if (!characters.hasOwnProperty(key)) {
+      if (!characters.hasOwnProperty(name)) {
         continue;
       }
 
-      cols[indexCounter % 2].push(
-        <CharacterItem key={key} name={key} appliedFunc={this.props.appliedFunc} />
+      // Cycle through rows to display left to right then up to down.
+      grid[indexCounter % 2].push(
+        <CharacterItem key={name} name={name} appliedFunc={this.props.appliedFunc} />
       );
 
       indexCounter++;
     }
 
-    return cols.map((val, i) => {
+    // Render CharacterItem objects enclosed by Grid.Column objects.
+    // Grid.Row is not used because all CharacterItem objects have the same height, thus eliminating the use of vertical alignment.
+    return grid.map((col, i) => {
       return (
-        <Grid.Column key={i}>{val}</Grid.Column>
+        <Grid.Column key={i}>{col}</Grid.Column>
       )
     });
   }
@@ -49,7 +52,7 @@ class CharacterItem extends React.Component {
 
   onApply = () => {
 
-    this.props.appliedFunc(this.props.name);
+    this.props.appliedFunc(this.props.name);  // Passed from App.
   }
 
   render() {
