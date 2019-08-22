@@ -5,11 +5,11 @@
     "level": 1,
     "bases": {
       "hp": 27, "str": 13, "mag": 6, "dex": 9, "spd": 8,
-      "lck": 8, "def": 6, "res": 6, "cha": 7, "mv": 0
+      "lck": 8, "def": 6, "res": 6, "cha": 7
     },
     "growths": {
       "hp": 45, "str": 45, "mag": 35, "dex": 45, "spd": 45,
-      "lck": 45, "def": 35, "res": 30, "cha": 45, "mv": 0
+      "lck": 45, "def": 35, "res": 30, "cha": 45
     }
   }
 }

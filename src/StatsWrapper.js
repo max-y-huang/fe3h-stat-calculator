@@ -51,8 +51,12 @@ class StatsWrapper extends React.Component {
   getAverageStat = (stat) => {
 
     let character = this.props.character;
-    let finalLevel = this.state.finalLevel;
     let classChanges = this.formatClassChanges();
+
+    // Unlike other stats, movement is fixed
+    if (stat === 'mv') {
+      return classes[classChanges[classChanges.length - 2]['class']]['bases']['mv'];
+    }
     
     // Start with the character base stat
     let val = character['bases'][stat];
