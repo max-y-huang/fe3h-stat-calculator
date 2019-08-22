@@ -125,7 +125,7 @@ class StatsWrapper extends React.Component {
           <Header>{character['name']}</Header>
         }
         headerButtons={
-          <Button color='blue' icon>
+          <Button color='blue' icon onClick={this.props.openCharacterSelectFunc}>
             <Icon name='edit' />
           </Button>
         }
@@ -139,7 +139,7 @@ class StatsWrapper extends React.Component {
                 <Label color='blue'>Level</Label>
                 <input />
               </Input>
-              <Button icon labelPosition='left' color='blue' fluid onClick={this.props.openSidebarFunc}> {/* Passed from App */}
+              <Button icon labelPosition='left' color='blue' fluid onClick={this.props.openClassChangeFunc}> {/* Passed from App */}
                 <Icon name='edit' />
                 Class Changes
               </Button>
