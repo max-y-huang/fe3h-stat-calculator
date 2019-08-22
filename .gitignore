@@ -66,3 +66,4 @@ typings/
 public/images/characters/*.png
 
 *.todo
+*.psd
