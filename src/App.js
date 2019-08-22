@@ -64,11 +64,11 @@ class App extends React.Component {
 
     return (
       <div>
-        <Sidebar className='side-bar' animation='overlay' visible={this.state.classChangeOpen}>
+        <Sidebar className='side-bar' animation='overlay' visible={this.state.classChangeOpen} style={{backgroundColor: '#f1f1f1'}}>
           <ClassChangeWrapper character={character} appliedFunc={this.applyClassChanges} />
         </Sidebar>
 
-        <Sidebar className='side-bar' animation='overlay' visible={this.state.characterSelectOpen}>
+        <Sidebar className='side-bar' animation='overlay' visible={this.state.characterSelectOpen} style={{backgroundColor: '#ffffff'}}>
           <CharacterSelect appliedFunc={this.applyCharacterSelect} />
         </Sidebar>
 
