@@ -37,7 +37,7 @@ class StatsWrapper extends React.Component {
     
     // Remove class changes after final level.
     for (let i = 0; i < classChanges.length; i++) {
-      if (classChanges[i]['level'] >= finalLevel) {
+      if (classChanges[i]['level'] > finalLevel) {
         classChanges.splice(i);
         break;
       }
