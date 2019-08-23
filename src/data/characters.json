@@ -107,5 +107,102 @@
       "hp": 30, "str": 30, "mag": 45, "dex": 40, "spd": 40,
       "lck": 45, "def": 30, "res": 45, "cha": 20
     }
+  },
+
+  "dimitri": {
+    "name": "Dimitri",
+    "class": "noble",
+    "bases": {
+      "hp": 28, "str": 12, "mag": 4, "dex": 7, "spd": 7,
+      "lck": 5, "def": 7, "res": 4, "cha": 9
+    },
+    "growths": {
+      "hp": 55, "str": 60, "mag": 20, "dex": 50, "spd": 50,
+      "lck": 25, "def": 40, "res": 20, "cha": 55
+    }
+  },
+  "dedue": {
+    "name": "Dedue",
+    "class": "commoner",
+    "bases": {
+      "hp": 30, "str": 12, "mag": 2, "dex": 5, "spd": 7,
+      "lck": 5, "def": 8, "res": 1, "cha": 4
+    },
+    "growths": {
+      "hp": 60, "str": 50, "mag": 15, "dex": 30, "spd": 20,
+      "lck": 25, "def": 50, "res": 10, "cha": 30
+    }
+  },
+  "felix": {
+    "name": "Felix",
+    "class": "noble",
+    "bases": {
+      "hp": 26, "str": 10, "mag": 5, "dex": 6, "spd": 9,
+      "lck": 5, "def": 5, "res": 3, "cha": 5
+    },
+    "growths": {
+      "hp": 45, "str": 55, "mag": 30, "dex": 45, "spd": 55,
+      "lck": 40, "def": 30, "res": 20, "cha": 30
+    }
+  },
+  "mercedes": {
+    "name": "Mercedes",
+    "class": "commoner",
+    "bases": {
+      "hp": 25, "str": 6, "mag": 10, "dex": 6, "spd": 8,
+      "lck": 5, "def": 5, "res": 9, "cha": 8
+    },
+    "growths": {
+      "hp": 30, "str": 25, "mag": 50, "dex": 45, "spd": 40,
+      "lck": 30, "def": 25, "res": 45, "cha": 40
+    }
+  },
+  "ashe": {
+    "name": "Ashe",
+    "class": "commoner",
+    "bases": {
+      "hp": 23, "str": 8, "mag": 5, "dex": 8, "spd": 9,
+      "lck": 6, "def": 5, "res": 6, "cha": 5
+    },
+    "growths": {
+      "hp": 35, "str": 35, "mag": 25, "dex": 55, "spd": 50,
+      "lck": 40, "def": 20, "res": 35, "cha": 25
+    }
+  },
+  "annette": {
+    "name": "Annette",
+    "class": "noble",
+    "bases": {
+      "hp": 23, "str": 6, "mag": 11, "dex": 7, "spd": 57,
+      "lck": 6, "def": 5, "res": 4, "cha": 6
+    },
+    "growths": {
+      "hp": 25, "str": 30, "mag": 50, "dex": 50, "spd": 35,
+      "lck": 35, "def": 20, "res": 30, "cha": 35
+    }
+  },
+  "sylvain": {
+    "name": "Sylvain",
+    "class": "noble",
+    "bases": {
+      "hp": 27, "str": 9, "mag": 5, "dex": 5, "spd": 8,
+      "lck": 6, "def": 6, "res": 2, "cha": 7
+    },
+    "growths": {
+      "hp": 55, "str": 45, "mag": 30, "dex": 35, "spd": 50,
+      "lck": 35, "def": 40, "res": 25, "cha": 40
+    }
+  },
+  "ingrid": {
+    "name": "Ingrid",
+    "class": "noble",
+    "bases": {
+      "hp": 27, "str": 8, "mag": 6, "dex": 6, "spd": 8,
+      "lck": 6, "def": 5, "res": 8, "cha": 8
+    },
+    "growths": {
+      "hp": 40, "str": 35, "mag": 35, "dex": 40, "spd": 60,
+      "lck": 45, "def": 30, "res": 40, "cha": 45
+    }
   }
 }
