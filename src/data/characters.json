@@ -301,5 +301,115 @@
       "hp": 40, "str": 40, "mag": 20, "dex": 55, "spd": 60,
       "lck": 40, "def": 40, "res": 15, "cha": 40
     }
-  }
+  },
+
+  "manuela": {
+    "name": "Manuela",
+    "class": "priest",
+    "bases": {
+      "hp": 26, "str": 10, "mag": 8, "dex": 6, "spd": 8,
+      "lck": 6, "def": 5, "res": 4, "cha": 7
+    },
+    "growths": {
+      "hp": 50, "str": 35, "mag": 35, "dex": 40, "spd": 60,
+      "lck": 35, "def": 30, "res": 25, "cha": 50
+    }
+  },
+  "hanneman": {
+    "name": "Hanneman",
+    "class": "mage",
+    "bases": {
+      "hp": 25, "str": 6, "mag": 10, "dex": 6, "spd": 6,
+      "lck": 4, "def": 5, "res": 7, "cha": 5
+    },
+    "growths": {
+      "hp": 40, "str": 30, "mag": 55, "dex": 45, "spd": 20,
+      "lck": 35, "def": 35, "res": 40, "cha": 35
+    }
+  },
+  "seteth": {
+    "name": "Seteth",
+    "class": "wyvern_rider",
+    "bases": {
+      "hp": 27, "str": 9, "mag": 8, "dex": 8, "spd": 5,
+      "lck": 6, "def": 6, "res": 4, "cha": 9
+    },
+    "growths": {
+      "hp": 50, "str": 45, "mag": 35, "dex": 50, "spd": 50,
+      "lck": 25, "def": 30, "res": 25, "cha": 45
+    }
+  },
+  "flayn": {
+    "name": "Flayn",
+    "class": "priest",
+    "bases": {
+      "hp": 24, "str": 6, "mag": 9, "dex": 6, "spd": 5,
+      "lck": 4, "def": 5, "res": 10, "cha": 9
+    },
+    "growths": {
+      "hp": 25, "str": 25, "mag": 55, "dex": 45, "spd": 35,
+      "lck": 15, "def": 25, "res": 50, "cha": 45
+    }
+  },
+  "cyril": {
+    "name": "Cyril",
+    "class": "commoner",
+    "bases": {
+      "hp": 24, "str": 7, "mag": 4, "dex": 6, "spd": 6,
+      "lck": 6, "def": 5, "res": 2, "cha": 4
+    },
+    "growths": {
+      "hp": 35, "str": 20, "mag": 15, "dex": 40, "spd": 40,
+      "lck": 30, "def": 10, "res": 10, "cha": 15
+    }
+  },
+
+  "catherine": {
+    "name": "Catherine",
+    "class": "swordmaster",
+    "bases": {
+      "hp": 27, "str": 8, "mag": 5, "dex": 6, "spd": 7,
+      "lck": 6, "def": 5, "res": 2, "cha": 4
+    },
+    "growths": {
+      "hp": 50, "str": 50, "mag": 25, "dex": 40, "spd": 55,
+      "lck": 30, "def": 30, "res": 30, "cha": 25
+    }
+  },
+  "alois": {
+    "name": "Alois",
+    "class": "warrior",
+    "bases": {
+      "hp": 28, "str": 9, "mag": 4, "dex": 5, "spd": 6,
+      "lck": 5, "def": 5, "res": 2, "cha": 7
+    },
+    "growths": {
+      "hp": 45, "str": 45, "mag": 20, "dex": 35, "spd": 40,
+      "lck": 30, "def": 40, "res": 20, "cha": 40
+    }
+  },
+  "gilbert": {
+    "name": "Gilbert",
+    "class": "fortress_knight",
+    "bases": {
+      "hp": 30, "str": 9, "mag": 4, "dex": 6, "spd": 5,
+      "lck": 4, "def": 5, "res": 2, "cha": 6
+    },
+    "growths": {
+      "hp": 55, "str": 45, "mag": 20, "dex": 45, "spd": 30,
+      "lck": 15, "def": 45, "res": 10, "cha": 35
+    }
+  },
+  "shamir": {
+    "name": "Shamir",
+    "class": "sniper",
+    "bases": {
+      "hp": 26, "str": 8, "mag": 4, "dex": 7, "spd": 6,
+      "lck": 8, "def": 5, "res": 2, "cha": 6
+    },
+    "growths": {
+      "hp": 35, "str": 40, "mag": 20, "dex": 55, "spd": 40,
+      "lck": 55, "def": 20, "res": 15, "cha": 30
+    }
+  }  
 }
