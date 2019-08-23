@@ -304,5 +304,246 @@
       "hp": 0, "str": 0, "mag": 0, "dex": 2, "spd": 3,
       "lck": 0, "def": 0, "res": 0, "cha": 2
     }
+  },
+
+  "armored_lord": {
+    "name": "Armored Lord",
+    "tier": "advanced",
+    "bases": {
+      "hp": 38, "str": 17, "mag": 8, "dex": 12, "spd": 6,
+      "lck": 10, "def": 17, "res": 8, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 20, "str": 5, "mag": 5, "dex": 0, "spd": 0,
+      "lck": 0, "def": 5, "res": 5, "cha": 10
+    },
+    "boosts": {
+      "hp": 5, "str": 0, "mag": 0, "dex": 0, "spd": -3,
+      "lck": 0, "def": 5, "res": 0, "cha": 2
+    }
+  },
+  "high_lord": {
+    "name": "High Lord",
+    "tier": "advanced",
+    "bases": {
+      "hp": 30, "str": 16, "mag": 7, "dex": 11, "spd": 13,
+      "lck": 9, "def": 13, "res": 9, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 20, "str": 5, "mag": 0, "dex": 5, "spd": 0,
+      "lck": 0, "def": 5, "res": 0, "cha": 10
+    },
+    "boosts": {
+      "hp": 3, "str": 1, "mag": 0, "dex": 0, "spd": 3,
+      "lck": 0, "def": 1, "res": 0, "cha": 2
+    }
+  },
+  "wyvern_master": {
+    "name": "Wyvern Master",
+    "tier": "advanced",
+    "bases": {
+      "hp": 30, "str": 17, "mag": 9, "dex": 13, "spd": 19,
+      "lck": 11, "def": 14, "res": 11, "cha": 0, "mv": 7
+    },
+    "growths": {
+      "hp": 20, "str": 10, "mag": 0, "dex": 0, "spd": 5,
+      "lck": 0, "def": 5, "res": 0, "cha": 10
+    },
+    "boosts": {
+      "hp": 2, "str": 2, "mag": 0, "dex": 3, "spd": 1,
+      "lck": 0, "def": 1, "res": 0, "cha": 2
+    }
+  },
+  "hero": {
+    "name": "Hero",
+    "tier": "advanced",
+    "bases": {
+      "hp": 30, "str": 17, "mag": 8, "dex": 12, "spd": 14,
+      "lck": 10, "def": 12, "res": 8, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 30, "str": 10, "mag": 0, "dex": 0, "spd": 10,
+      "lck": 0, "def": 0, "res": -5, "cha": 5
+    },
+    "boosts": {
+      "hp": 3, "str": 2, "mag": 0, "dex": 0, "spd": 2,
+      "lck": 1, "def": 1, "res": 0, "cha": 0
+    }
+  },
+  "swordmaster": {
+    "name": "Swordmaster",
+    "tier": "advanced",
+    "bases": {
+      "hp": 30, "str": 17, "mag": 8, "dex": 12, "spd": 14,
+      "lck": 10, "def": 12, "res": 8, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 25, "str": 10, "mag": 0, "dex": 0, "spd": 20,
+      "lck": 0, "def": 0, "res": -5, "cha": 5
+    },
+    "boosts": {
+      "hp": 1, "str": 2, "mag": 0, "dex": 1, "spd": 4,
+      "lck": 0, "def": 1, "res": 0, "cha": 0
+    }
+  },
+  "assassin": {
+    "name": "Assassin",
+    "tier": "advanced",
+    "bases": {
+      "hp": 30, "str": 17, "mag": 8, "dex": 12, "spd": 14,
+      "lck": 10, "def": 12, "res": 8, "cha": 0, "mv": 6
+    },
+    "growths": {
+      "hp": 20, "str": 0, "mag": 0, "dex": 20, "spd": 20,
+      "lck": 0, "def": 0, "res": 0, "cha": 0
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 3, "spd": 5,
+      "lck": 1, "def": 0, "res": 0, "cha": 0
+    }
+  },
+  "fortress_knight": {
+    "name": "Fortress Knight",
+    "tier": "advanced",
+    "bases": {
+      "hp": 35, "str": 17, "mag": 8, "dex": 12, "spd": 8,
+      "lck": 10, "def": 17, "res": 7, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 30, "str": 10, "mag": 0, "dex": 0, "spd": -10,
+      "lck": 0, "def": 15, "res": 0, "cha": 5
+    },
+    "boosts": {
+      "hp": 5, "str": 0, "mag": 0, "dex": 0, "spd": -6,
+      "lck": 0, "def": 10, "res": 0, "cha": 0
+    }
+  },
+  "paladin": {
+    "name": "Paladin",
+    "tier": "advanced",
+    "bases": {
+      "hp": 32, "str": 17, "mag": 8, "dex": 12, "spd": 14,
+      "lck": 10, "def": 12, "res": 8, "cha": 0, "mv": 8
+    },
+    "growths": {
+      "hp": 30, "str": 10, "mag": 0, "dex": 5, "spd": -10,
+      "lck": 5, "def": 5, "res": 5, "cha": 5
+    },
+    "boosts": {
+      "hp": 2, "str": 2, "mag": 0, "dex": 2, "spd": -1,
+      "lck": 0, "def": 2, "res": 2, "cha": 0
+    }
+  },
+  "wyvern_rider": {
+    "name": "Wyvern Rider",
+    "tier": "advanced",
+    "bases": {
+      "hp": 30, "str": 18, "mag": 8, "dex": 12, "spd": 14,
+      "lck": 10, "def": 12, "res": 8, "cha": 0, "mv": 7
+    },
+    "growths": {
+      "hp": 30, "str": 10, "mag": -5, "dex": 0, "spd": 0,
+      "lck": 0, "def": 5, "res": -5, "cha": 5
+    },
+    "boosts": {
+      "hp": 1, "str": 3, "mag": 0, "dex": 1, "spd": 3,
+      "lck": 0, "def": 2, "res": 0, "cha": 0
+    }
+  },
+  "warrior": {
+    "name": "Warrior",
+    "tier": "advanced",
+    "bases": {
+      "hp": 32, "str": 19, "mag": 8, "dex": 12, "spd": 14,
+      "lck": 10, "def": 13, "res": 8, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 40, "str": 15, "mag": -5, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 5
+    },
+    "boosts": {
+      "hp": 3, "str": 3, "mag": 0, "dex": 0, "spd": 1,
+      "lck": 1, "def": 1, "res": 0, "cha": 0
+    }
+  },
+  "sniper": {
+    "name": "Sniper",
+    "tier": "advanced",
+    "bases": {
+      "hp": 30, "str": 17, "mag": 8, "dex": 12, "spd": 14,
+      "lck": 10, "def": 12, "res": 8, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 10, "str": 5, "mag": 0, "dex": 20, "spd": 0,
+      "lck": 10, "def": 0, "res": 0, "cha": 5
+    },
+    "boosts": {
+      "hp": 0, "str": 1, "mag": 0, "dex": 5, "spd": 0,
+      "lck": 3, "def": 0, "res": 0, "cha": 0
+    }
+  },
+  "grappler": {
+    "name": "Grappler",
+    "tier": "advanced",
+    "bases": {
+      "hp": 32, "str": 17, "mag": 8, "dex": 12, "spd": 14,
+      "lck": 10, "def": 14, "res": 7, "cha": 0, "mv": 6
+    },
+    "growths": {
+      "hp": 40, "str": 10, "mag": 0, "dex": 10, "spd": 10,
+      "lck": 0, "def": 5, "res": 0, "cha": 5
+    },
+    "boosts": {
+      "hp": 2, "str": 1, "mag": 0, "dex": 3, "spd": 3,
+      "lck": 0, "def": 1, "res": -1, "cha": 0
+    }
+  },
+  "warlock": {
+    "name": "Warlock",
+    "tier": "advanced",
+    "bases": {
+      "hp": 30, "str": 8, "mag": 17, "dex": 12, "spd": 14,
+      "lck": 10, "def": 12, "res": 15, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 10, "str": 0, "mag": 10, "dex": 0, "spd": 0,
+      "lck": 0, "def": -5, "res": 5, "cha": 5
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 3, "dex": 1, "spd": 1,
+      "lck": 0, "def": 0, "res": 4, "cha": 0
+    }
+  },
+  "dark_bishop": {
+    "name": "Dark Bishop",
+    "tier": "advanced",
+    "bases": {
+      "hp": 30, "str": 8, "mag": 17, "dex": 12, "spd": 14,
+      "lck": 10, "def": 12, "res": 15, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 10, "str": 0, "mag": 10, "dex": 0, "spd": 0,
+      "lck": 0, "def": -5, "res": 5, "cha": 0
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 4, "dex": 2, "spd": 0,
+      "lck": 0, "def": 0, "res": 3, "cha": 0
+    }
+  },
+  "bishop": {
+    "name": "Bishop",
+    "tier": "advanced",
+    "bases": {
+      "hp": 30, "str": 8, "mag": 15, "dex": 12, "spd": 14,
+      "lck": 10, "def": 12, "res": 15, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 10, "str": 0, "mag": 10, "dex": 0, "spd": 0,
+      "lck": 10, "def": -5, "res": 5, "cha": 10
+    },
+    "boosts": {
+      "hp": 1, "str": 0, "mag": 2, "dex": 1, "spd": 0,
+      "lck": 0, "def": 0, "res": 5, "cha": 0
+    }
   }
 }
