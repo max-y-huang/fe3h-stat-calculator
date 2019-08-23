@@ -75,7 +75,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <Sidebar className='side-bar' animation='overlay' visible={this.state.classChangeOpen} style={{backgroundColor: '#f1f1f1'}}>
+        <Sidebar className='side-bar' animation='overlay' visible={this.state.classChangeOpen} style={{backgroundColor: '#f5f5f5'}}>
           <ClassChangeWrapper character={character} resetFlag={this.state.resetFlag} appliedFunc={this.applyClassChanges} />
         </Sidebar>
 

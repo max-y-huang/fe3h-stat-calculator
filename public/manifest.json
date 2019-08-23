@@ -60,6 +60,6 @@
   ],
   "start_url": "/index.html",
   "display": "standalone",
-  "theme_color": "#f1f1f1",
-  "background_color": "#f1f1f1"
+  "theme_color": "#f5f5f5",
+  "background_color": "#f5f5f5"
 }
