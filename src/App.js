@@ -60,11 +60,12 @@ class App extends React.Component {
   // Passed to CharacterSelect as an on modify callback.
   applyCharacterSelect = (newCharacterId) => {
 
-    this.reset();
-
     this.setState({
       characterId: newCharacterId,
       characterSelectOpen: false
+    }, () => {
+
+      this.reset();
     });
   }
 
