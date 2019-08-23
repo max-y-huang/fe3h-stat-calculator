@@ -204,5 +204,102 @@
       "hp": 40, "str": 35, "mag": 35, "dex": 40, "spd": 60,
       "lck": 45, "def": 30, "res": 40, "cha": 45
     }
+  },
+
+  "claude": {
+    "name": "Claude",
+    "class": "noble",
+    "bases": {
+      "hp": 26, "str": 11, "mag": 5, "dex": 8, "spd": 8,
+      "lck": 7, "def": 6, "res": 4, "cha": 8
+    },
+    "growths": {
+      "hp": 35, "str": 40, "mag": 25, "dex": 60, "spd": 55,
+      "lck": 45, "def": 30, "res": 25, "cha": 55
+    }
+  },
+  "lorenz": {
+    "name": "Lorenz",
+    "class": "noble",
+    "bases": {
+      "hp": 28, "str": 8, "mag": 7, "dex": 6, "spd": 7,
+      "lck": 5, "def": 5, "res": 6, "cha": 3
+    },
+    "growths": {
+      "hp": 55, "str": 40, "mag": 40, "dex": 45, "spd": 40,
+      "lck": 25, "def": 30, "res": 40, "cha": 35
+    }
+  },
+  "hilda": {
+    "name": "Hilda",
+    "class": "noble",
+    "bases": {
+      "hp": 29, "str": 10, "mag": 5, "dex": 5, "spd": 8,
+      "lck": 6, "def": 6, "res": 3, "cha": 7
+    },
+    "growths": {
+      "hp": 50, "str": 45, "mag": 25, "dex": 30, "spd": 50,
+      "lck": 35, "def": 35, "res": 20, "cha": 50
+    }
+  },
+  "raphael": {
+    "name": "Raphael",
+    "class": "commoner",
+    "bases": {
+      "hp": 30, "str": 11, "mag": 3, "dex": 5, "spd": 6,
+      "lck": 6, "def": 7, "res": 1, "cha": 4
+    },
+    "growths": {
+      "hp": 65, "str": 50, "mag": 15, "dex": 35, "spd": 15,
+      "lck": 35, "def": 45, "res": 10, "cha": 25
+    }
+  },
+  "lysithea": {
+    "name": "Lysithea",
+    "class": "noble",
+    "bases": {
+      "hp": 22, "str": 4, "mag": 11, "dex": 7, "spd": 7,
+      "lck": 4, "def": 3, "res": 4, "cha": 5
+    },
+    "growths": {
+      "hp": 20, "str": 15, "mag": 60, "dex": 60, "spd": 50,
+      "lck": 15, "def": 10, "res": 25, "cha": 25
+    }
+  },
+  "ignatz": {
+    "name": "Ignatz",
+    "class": "commoner",
+    "bases": {
+      "hp": 25, "str": 8, "mag": 5, "dex": 7, "spd": 8,
+      "lck": 8, "def": 4, "res": 6, "cha": 4
+    },
+    "growths": {
+      "hp": 35, "str": 35, "mag": 30, "dex": 50, "spd": 50,
+      "lck": 55, "def": 25, "res": 35, "cha": 25
+    }
+  },
+  "marianne": {
+    "name": "Marianne",
+    "class": "noble",
+    "bases": {
+      "hp": 23, "str": 5, "mag": 11, "dex": 6, "spd": 7,
+      "lck": 6, "def": 4, "res": 8, "cha": 7
+    },
+    "growths": {
+      "hp": 35, "str": 20, "mag": 50, "dex": 40, "spd": 40,
+      "lck": 35, "def": 15, "res": 45, "cha": 40
+    }
+  },
+  "leonie": {
+    "name": "Leonie",
+    "class": "commoner",
+    "bases": {
+      "hp": 26, "str": 9, "mag": 5, "dex": 8, "spd": 9,
+      "lck": 6, "def": 7, "res": 2, "cha": 7
+    },
+    "growths": {
+      "hp": 40, "str": 40, "mag": 20, "dex": 55, "spd": 60,
+      "lck": 40, "def": 40, "res": 15, "cha": 40
+    }
   }
 }
