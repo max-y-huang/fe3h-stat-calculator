@@ -111,5 +111,198 @@
       "hp": 0, "str": 0, "mag": 0, "dex": 0, "spd": 0,
       "lck": 0, "def": 0, "res": 1, "cha": 0
     }
+  },
+
+  "lord": {
+    "name": "Lord",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 25, "str": 9, "mag": 6, "dex": 10, "spd": 10,
+      "lck": 8, "def": 6, "res": 3, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 20, "str": 0, "mag": 0, "dex": 10, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 10
+    },
+    "boosts": {
+      "hp": 1, "str": 0, "mag": 0, "dex": 0, "spd": 1,
+      "lck": 1, "def": 0, "res": 0, "cha": 2
+    }
+  },
+  "mercenary": {
+    "name": "Mercenary",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 25, "str": 9, "mag": 6, "dex": 10, "spd": 10,
+      "lck": 8, "def": 6, "res": 2, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 20, "str": 5, "mag": 0, "dex": 0, "spd": 5,
+      "lck": 0, "def": 0, "res": -5, "cha": 5
+    },
+    "boosts": {
+      "hp": 1, "str": 1, "mag": 0, "dex": 0, "spd": 1,
+      "lck": 0, "def": 0, "res": 0, "cha": 0
+    }
+  },
+  "thief": {
+    "name": "Thief",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 25, "str": 9, "mag": 6, "dex": 11, "spd": 11,
+      "lck": 8, "def": 6, "res": 3, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 20, "str": 0, "mag": 0, "dex": 10, "spd": 10,
+      "lck": 0, "def": 0, "res": 0, "cha": 5
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 2, "spd": 2,
+      "lck": 0, "def": 0, "res": 0, "cha": 0
+    }
+  },
+  "armored_knight": {
+    "name": "Armored Knight",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 30, "str": 9, "mag": 6, "dex": 7, "spd": 4,
+      "lck": 8, "def": 12, "res": 1, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 20, "str": 0, "mag": 0, "dex": 0, "spd": -10,
+      "lck": 0, "def": 10, "res": -5, "cha": 5
+    },
+    "boosts": {
+      "hp": 3, "str": 0, "mag": 0, "dex": 0, "spd": -3,
+      "lck": 0, "def": 4, "res": -1, "cha": 0
+    }
+  },
+  "cavalier": {
+    "name": "Cavalier",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 25, "str": 9, "mag": 6, "dex": 7, "spd": 6,
+      "lck": 8, "def": 6, "res": 2, "cha": 0, "mv": 7
+    },
+    "growths": {
+      "hp": 20, "str": 5, "mag": 0, "dex": 5, "spd": -10,
+      "lck": 0, "def": 5, "res": 0, "cha": 5
+    },
+    "boosts": {
+      "hp": 1, "str": 1, "mag": 0, "dex": 2, "spd": -1,
+      "lck": 0, "def": 1, "res": 0, "cha": 0
+    }
+  },
+  "brigand": {
+    "name": "Brigand",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 28, "str": 10, "mag": 6, "dex": 7, "spd": 7,
+      "lck": 8, "def": 6, "res": 2, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 30, "str": 10, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": -5, "cha": 5
+    },
+    "boosts": {
+      "hp": 2, "str": 2, "mag": 0, "dex": 0, "spd": 0,
+      "lck": 0, "def": 0, "res": 0, "cha": 0
+    }
+  },
+  "archer": {
+    "name": "Archer",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 25, "str": 8, "mag": 6, "dex": 8, "spd": 170,
+      "lck": 8, "def": 5, "res": 2, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 5, "str": 0, "mag": 0, "dex": 10, "spd": 0,
+      "lck": 5, "def": 0, "res": 0, "cha": 5
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 2, "spd": 0,
+      "lck": 2, "def": 0, "res": 0, "cha": 0
+    }
+  },
+  "brawler": {
+    "name": "Brawler",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 28, "str": 9, "mag": 6, "dex": 7, "spd": 8,
+      "lck": 8, "def": 6, "res": 1, "cha": 0, "mv": 5
+    },
+    "growths": {
+      "hp": 30, "str": 0, "mag": -10, "dex": 10, "spd": 10,
+      "lck": 0, "def": 0, "res": -10, "cha": 5
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 2, "spd": 2,
+      "lck": 0, "def": 0, "res": -1, "cha": 0
+    }
+  },
+  "mage": {
+    "name": "Mage",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 25, "str": 4, "mag": 10, "dex": 7, "spd": 6,
+      "lck": 8, "def": 3, "res": 5, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 5, "str": -5, "mag": 10, "dex": 5, "spd": 0,
+      "lck": 0, "def": -5, "res": 5, "cha": 5
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 1, "dex": 1, "spd": 0,
+      "lck": 0, "def": 0, "res": 2, "cha": 0
+    }
+  },
+  "dark_mage": {
+    "name": "Dark Mage",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 25, "str": 4, "mag": 10, "dex": 7, "spd": 6,
+      "lck": 8, "def": 3, "res": 5, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 5, "str": -5, "mag": 10, "dex": 5, "spd": 0,
+      "lck": 0, "def": -5, "res": 5, "cha": 0
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 2, "dex": 1, "spd": 0,
+      "lck": 0, "def": 0, "res": 1, "cha": 0
+    }
+  },
+  "priest": {
+    "name": "Priest",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 25, "str": 4, "mag": 9, "dex": 7, "spd": 6,
+      "lck": 8, "def": 3, "res": 5, "cha": 0, "mv": 4
+    },
+    "growths": {
+      "hp": 5, "str": -5, "mag": 5, "dex": 5, "spd": 0,
+      "lck": 0, "def": -5, "res": 10, "cha": 10
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 1, "spd": 0,
+      "lck": 0, "def": 0, "res": 3, "cha": 0
+    }
+  },
+  "pegasus_knight": {
+    "name": "Pegasus Knight",
+    "tier": "intermediate",
+    "bases": {
+      "hp": 25, "str": 8, "mag": 6, "dex": 7, "spd": 8,
+      "lck": 8, "def": 5, "res": 4, "cha": 0, "mv": 6
+    },
+    "growths": {
+      "hp": 15, "str": 0, "mag": 0, "dex": 0, "spd": 10,
+      "lck": 0, "def": 0, "res": 5, "cha": 10
+    },
+    "boosts": {
+      "hp": 0, "str": 0, "mag": 0, "dex": 2, "spd": 3,
+      "lck": 0, "def": 0, "res": 0, "cha": 2
+    }
   }
 }
