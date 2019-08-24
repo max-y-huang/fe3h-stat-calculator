@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon, Grid, Input, Label, Header, Segment } from 'semantic-ui-react';
+import { Button, Icon, Grid, Input, Label, Segment, Divider } from 'semantic-ui-react';
 
 import WindowWrapper from './WindowWrapper';
 
@@ -22,7 +22,7 @@ class Main extends React.Component {
 
   onReset = () => {
 
-    // reset final level
+    // Reset final level.
     this.levelInputRef.current.value = 1;
     this.setState({
       finalLevel: 1
@@ -51,7 +51,7 @@ class Main extends React.Component {
 
     // Add class change for initial class.
     classChanges.splice(0, 0, {
-      level: 1,
+      level: this.props.characterBaseLevel,
       class: character['class']
     });
 
@@ -70,16 +70,13 @@ class Main extends React.Component {
     }
     
     // Start with the character base stat
-    let val = character['bases'][stat];
+    let val = this.props.characterBaseStats[stat];
 
     // Loop through all class intervals. The last index is a final level placeholder.
     for (let i = 0; i < classChanges.length - 1; i++) {
 
       // Increase val to class base stat (if applicable).
-      let classBase = classes[classChanges[i]['class']]['bases'][stat];
-      if (val < classBase) {
-        val = classBase;
-      }
+      val = Math.max(val, classes[classChanges[i]['class']]['bases'][stat]);
 
       // Get growth modifier from character and class growth rate.
       let characterGrowth = character['growths'][stat];
@@ -94,6 +91,9 @@ class Main extends React.Component {
       // Add average stat growth over class interval.
       val += growthModifier * levelDifference;
     }
+
+    // Add class bonuses.
+    val += classes[classChanges[classChanges.length - 2]['class']]['boosts'][stat];
 
     // Round to two decimals.
     return Math.round(val * 100) / 100;
@@ -126,6 +126,11 @@ class Main extends React.Component {
     });
   }
 
+  componentDidMount() {
+
+    this.onReset();
+  }
+
   componentDidUpdate(prevProps, prevStates) {
 
     if (prevProps.resetFlag !== this.props.resetFlag) {
@@ -135,16 +140,16 @@ class Main extends React.Component {
 
   render() {
 
-    let character = this.props.character;
+    let characterId = this.props.characterId;
+    let characterName = this.props.character['name'];
 
     return (
       <WindowWrapper
-        headerTitle={
-          <Header>{character['name']}</Header>
-        }
+        characterId={characterId}
+        characterName={characterName}
         headerButtons={
           <Button color='blue' icon onClick={this.props.openCharacterSelectFunc}>
-            <Icon name='edit' />
+            <Icon name='exchange' />
           </Button>
         }
         body={
@@ -152,11 +157,16 @@ class Main extends React.Component {
           <div>
 
             <Segment>
-              <Label attached='top left' color='yellow'>Input</Label>
-              <Input onChange={this.setFinalLevel} fluid defaultValue={1} labelPosition='left' style={{marginBottom: '1em'}}> {/* TODO: Remove inline style */}
+              <Label attached='top left' color='yellow'>Information</Label>
+              <Input onChange={this.setFinalLevel} fluid defaultValue={1} labelPosition='left'>
                 <Label color='blue'>Level</Label>
                 <input ref={this.levelInputRef} />
               </Input>
+              <Divider />
+              <Button icon labelPosition='left' color='blue' fluid onClick={this.props.openBaseStatsFunc} style={{marginBottom: '1em'}}> {/* Passed from App */}
+                <Icon name='edit' />
+                Joining Information
+              </Button>
               <Button icon labelPosition='left' color='blue' fluid onClick={this.props.openClassChangeFunc}> {/* Passed from App */}
                 <Icon name='edit' />
                 Class Changes

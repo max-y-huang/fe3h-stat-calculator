@@ -16,7 +16,7 @@ class ClassChangeInput extends React.Component {
     this.sliderRef = React.createRef();
     this.state = {
       classOptions: [],  // set in componentDidMount()
-      values: {
+      classChanges: {
         '0': { 'level': 1, 'class': null },
         '1': { 'level': 1, 'class': null },
         '2': { 'level': 1, 'class': null },
@@ -28,20 +28,20 @@ class ClassChangeInput extends React.Component {
 
   getValues = () => {
 
-    let values = this.state.values;
+    let classChanges = this.state.classChanges;
     let ret = [];
 
-    for (var key in values) {
+    for (var key in classChanges) {
 
-      if (!values.hasOwnProperty(key)) {
+      if (!classChanges.hasOwnProperty(key)) {
         continue;
       }
 
-      if (!this.getActive(key) || values[key]['class'] === null) {
+      if (!this.getActive(key) || classChanges[key]['class'] === null) {
         continue;
       }
 
-      ret.push(values[key]);
+      ret.push(classChanges[key]);
     }
 
     // Sort values ascending.
@@ -53,12 +53,12 @@ class ClassChangeInput extends React.Component {
   // Passed to ClassChangeSelect as 'active' prop. Also used in getValues().
   getActive = (index) => {
 
-    let level = this.state.values[index]['level'];
+    let level = this.state.classChanges[index]['level'];
 
     // Inactive if not first index with value.
     // Check all indices before index for inactivity.
     for (let i = 0; i < index; i++) {
-      if (this.state.values[i]['level'] === level) {
+      if (this.state.classChanges[i]['level'] === level) {
         return false;
       }
     }
@@ -69,31 +69,31 @@ class ClassChangeInput extends React.Component {
   // Passed to ClassChangeSelect as 'level' prop.
   getLevel = (index) => {
 
-    let value = this.state.values[index];
+    let classChanges = this.state.classChanges[index];
 
-    if (!value) {
+    if (!classChanges) {
       return '-';
     }
 
-    return !value['level'] ? '-' : value['level'];
+    return !classChanges['level'] ? '-' : classChanges['level'];
   }
 
   // Passed to ClassChangeSelect and ClassChangeSlider as an on modify callback.
   // 'attr' can have a value of 'level' or 'class'.
   modifyAttr = (index, attr, newVal) => {
 
-    let tempValues = this.state.values;
+    let tempClassChanges = this.state.classChanges;
 
-    let defaultClass = tempValues[index + '']['class'];
-    let defaultLevel = tempValues[index + '']['level'];
+    let defaultClass = tempClassChanges[index + '']['class'];
+    let defaultLevel = tempClassChanges[index + '']['level'];
 
-    tempValues[index + ''] = {
+    tempClassChanges[index + ''] = {
       level: (attr === 'level') ? newVal : defaultLevel,
       class: (attr === 'class') ? newVal : defaultClass
     }
 
     this.setState({
-      values: tempValues
+      classChanges: tempClassChanges
     });
   }
 
@@ -135,7 +135,7 @@ class ClassChangeInput extends React.Component {
   }
 
   componentDidMount() {
-
+    
     this.setClassOptions();
   }
 
@@ -192,7 +192,7 @@ class ClassChangeSlider extends React.Component {
 
   componentDidMount = () => {
 
-    this.onModify();  // Level values (in parent) are initially set at 0. Set them to the starting level upon mount.
+    this.onReset();
   }
 
   componentDidUpdate(prevProps, prevStates) {
@@ -259,6 +259,11 @@ class ClassChangeSelect extends React.Component {
   onModify = (e, { value }) => {
 
     this.props.modifyFunc(this.props.index, 'class', value);  // Passed from ClassChangeInput.
+  }
+
+  componentDidMount() {
+
+    this.onReset();
   }
 
   componentDidUpdate(prevProps, prevStates) {

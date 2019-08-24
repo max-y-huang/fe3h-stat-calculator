@@ -1,5 +1,5 @@
 import React from 'react';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Header } from 'semantic-ui-react';
 
 import './css/windowWrapper.css';
 
@@ -26,6 +26,9 @@ class WindowWrapper extends React.Component {
   }
 
   render() {
+
+    let characterId = this.props.characterId;
+    let characterName = this.props.characterName;
     
     return (
       <div className='window-wrapper'>
@@ -33,7 +36,8 @@ class WindowWrapper extends React.Component {
 
           <Segment className='header-segment'>
             <div>
-              <div>{this.props.headerTitle}</div> {/* Vertically centered in parent div */}
+              <img src={'images/characters/' + characterId + '.png'} alt='' />
+              <div><Header>{characterName}</Header></div>
             </div>
 
             <div>{this.props.headerButtons}</div>

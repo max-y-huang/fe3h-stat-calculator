@@ -20,6 +20,7 @@
 
   display: flex;
   justify-content: space-between;
+  padding-left: 0 !important;
 }
 
 .header-segment > div:nth-child(1) {
@@ -27,10 +28,20 @@
   position: relative;
 }
 
-.header-segment > div:nth-child(1) > div {
+.header-segment > div:nth-child(1) > *:nth-child(1) {
+
+  position: absolute;
+  bottom: -1em;  /* Reverse padding. */
+  left: 0;
+
+  height: calc(100% + 2em + 1em);  /* Outer padding of 2em, upper margin of 1em. */
+}
+
+.header-segment > div:nth-child(1) > *:nth-child(2) {
 
   position: absolute;
   top: 50%;
+  left: 6.5em;  /* Spacing for image */
   transform: translateY(-50%);
 }
 
