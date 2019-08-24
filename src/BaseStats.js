@@ -30,7 +30,7 @@ class BaseStats extends React.Component {
     this.setStatsToAverage();
   }
 
-  onApply = () => {
+  onApply = (close=true) => {
 
     let baseClass = classes[this.props.character['class']];
     let baseStats = this.state.baseStats;
@@ -46,7 +46,7 @@ class BaseStats extends React.Component {
       modifiedBaseStats[stat] = baseStats[stat] - baseClass['boosts'][stat];
     }
     
-    this.props.appliedFunc(this.state.baseLevel, modifiedBaseStats);  // Passed from App.
+    this.props.appliedFunc(this.state.baseLevel, modifiedBaseStats, close);  // Passed from App.
   }
 
   setStatsToAverage = () => {
@@ -130,6 +130,10 @@ class BaseStats extends React.Component {
 
     if (prevStates.baseLevel !== this.state.baseLevel) {
       this.setStatsToAverage();
+    }
+
+    if (prevStates.baseStats !== this.state.baseStats) {
+      this.onApply(false);
     }
   }
 

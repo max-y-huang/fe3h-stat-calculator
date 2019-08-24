@@ -62,34 +62,33 @@ class App extends React.Component {
   }
 
   // Passed to ClassChange for the 'Apply' button.
-  applyClassChanges = (newClassChanges) => {
+  applyClassChanges = (newClassChanges, close=true) => {
 
-    this.setState({
+    this.setState((state) => ({
       classChanges: newClassChanges,
-      classChangeOpen: false
-    });
+      classChangeOpen: close ? false : state.classChangeOpen
+    }));
   }
 
   // Passed to BaseStats for the 'Apply' button.
-  applyBaseStats = (newBaseLevel, newBaseStats) => {
+  applyBaseStats = (newBaseLevel, newBaseStats, close=true) => {
 
-    this.setState({
+    this.setState((state) => ({
       characterBaseLevel: newBaseLevel,
       characterBaseStats: newBaseStats,
-      baseStatsOpen: false
-    });
+      baseStatsOpen: close ? false : state.baseStatsOpen
+    }));
   }
 
   // Passed to CharacterSelect as an on modify callback.
-  applyCharacterSelect = (newCharacterId) => {
+  applyCharacterSelect = (newCharacterId, close=true) => {
 
-    this.setState({
+    this.reset();
+
+    this.setState((state) => ({
       characterId: newCharacterId,
-      characterSelectOpen: false
-    }, () => {
-
-      this.reset();
-    });
+      characterSelectOpen: close ? false : state.characterSelectOpen
+    }));
   }
 
   render() {
