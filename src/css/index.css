@@ -44,18 +44,3 @@ input[type=number] {
   height: 100%;
   width: 100%;
 }
-
-#version {
-
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 0.5em;
-
-  color: #808080;
-}
-
-#version::before {
-
-  content: 'Ver. ';
-}
