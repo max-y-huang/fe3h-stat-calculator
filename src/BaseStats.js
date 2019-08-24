@@ -3,18 +3,71 @@ import { Header, Button, Icon, Input, Label, Segment, Grid, Divider } from 'sema
 
 import WindowWrapper from './WindowWrapper';
 
+import classes from './data/classes.json';
+
 class BaseStats extends React.Component {
 
   constructor(props) {
 
     super(props);
 
-    ///
+    this.levelInputRef = React.createRef();
+
+    this.state = {
+      baseLevel: 1,
+      baseStats: { 'hp': 0, 'str': 0, 'mag': 0, 'dex': 0, 'spd': 0, 'lck': 0, 'def': 0, 'res': 0, 'cha': 0 }
+    };
+  }
+
+  onReset = () => {
+
+    // Reset joining level.
+    this.levelInputRef.current.value = 1;
+    this.setState({
+      baseLevel: 1
+    });
+
+    this.setStatsToAverage();
   }
 
   onApply = () => {
     
     this.props.appliedFunc();  // Passed from App.
+  }
+
+  setStatsToAverage = () => {
+    
+    let statList = [ 'hp', 'str', 'mag', 'dex', 'spd', 'lck', 'def', 'res', 'cha' ];
+    let tempBaseStats = {};
+
+    statList.forEach((stat) => {
+      tempBaseStats[stat] = this.getAverageBaseStat(stat);
+    });
+
+    this.setState({
+      baseStats: tempBaseStats
+    });
+  }
+
+  getAverageBaseStat(stat) {
+
+    let character = this.props.character;
+    let baseClass = classes[character['class']];
+
+    let growthModifier = 0.01 * (character['growths'][stat] + baseClass['growths'][stat]);
+
+    let val = character['bases'][stat] + growthModifier * (this.state.baseLevel - 1);
+    val = Math.max(val, baseClass['bases'][stat]);
+    val += baseClass['boosts'][stat];
+
+    return Math.round(val);
+  }
+
+  setBaseLevel = (e, { name, value }) => {
+
+    this.setState({
+      baseLevel: value
+    });
   }
 
   renderStatDisplays = () => {
@@ -30,11 +83,27 @@ class BaseStats extends React.Component {
       return (
         <Grid.Column key={i}>
           {col.map((cell) => {
-            return <StatDisplay key={cell} label={cell} defaultValue={10} />
+            return <StatDisplay key={cell} label={cell} defaultValue={this.state.baseStats[cell]} />
           })}
         </Grid.Column>
       );
     });
+  }
+
+  componentDidMount() {
+
+    this.onReset();
+  }
+
+  componentDidUpdate(prevProps, prevStates) {
+
+    if (prevProps.resetFlag !== this.props.resetFlag) {
+      this.onReset();
+    }
+
+    if (prevStates.baseLevel !== this.state.baseLevel) {
+      this.setStatsToAverage();
+    }
   }
 
   render() {
@@ -58,7 +127,7 @@ class BaseStats extends React.Component {
 
             <Segment>
               <Label attached='top left' color='yellow'>Joining Information</Label>
-              <Input onChange={this.setFinalLevel} fluid defaultValue={1} labelPosition='left'>
+              <Input onChange={this.setBaseLevel} fluid defaultValue={1} labelPosition='left'>
                 <Label color='blue'>Level</Label>
                 <input ref={this.levelInputRef} />
               </Input>

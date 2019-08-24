@@ -135,7 +135,7 @@ class ClassChangeInput extends React.Component {
   }
 
   componentDidMount() {
-
+    
     this.setClassOptions();
   }
 
@@ -192,7 +192,7 @@ class ClassChangeSlider extends React.Component {
 
   componentDidMount = () => {
 
-    this.onModify();  // Level values (in parent) are initially set at 0. Set them to the starting level upon mount.
+    this.onReset();
   }
 
   componentDidUpdate(prevProps, prevStates) {
@@ -259,6 +259,11 @@ class ClassChangeSelect extends React.Component {
   onModify = (e, { value }) => {
 
     this.props.modifyFunc(this.props.index, 'class', value);  // Passed from ClassChangeInput.
+  }
+
+  componentDidMount() {
+
+    this.onReset();
   }
 
   componentDidUpdate(prevProps, prevStates) {

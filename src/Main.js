@@ -22,7 +22,7 @@ class Main extends React.Component {
 
   onReset = () => {
 
-    // reset final level
+    // Reset final level.
     this.levelInputRef.current.value = 1;
     this.setState({
       finalLevel: 1
@@ -124,6 +124,11 @@ class Main extends React.Component {
         </Grid.Column>
       );
     });
+  }
+
+  componentDidMount() {
+
+    this.onReset();
   }
 
   componentDidUpdate(prevProps, prevStates) {
