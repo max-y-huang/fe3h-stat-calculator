@@ -51,7 +51,7 @@ class Main extends React.Component {
 
     // Add class change for initial class.
     classChanges.splice(0, 0, {
-      level: 1,
+      level: this.props.characterBaseLevel,
       class: character['class']
     });
 
@@ -70,7 +70,7 @@ class Main extends React.Component {
     }
     
     // Start with the character base stat
-    let val = character['bases'][stat];
+    let val = this.props.characterBaseStats[stat];
 
     // Loop through all class intervals. The last index is a final level placeholder.
     for (let i = 0; i < classChanges.length - 1; i++) {

@@ -22,7 +22,10 @@ class App extends React.Component {
       classChangeOpen: false,
       baseStatsOpen: false,
       characterSelectOpen: false,
+
       characterId: 'byleth',
+      characterBaseLevel: 1,
+      characterBaseStats: { 'hp': 0, 'str': 0, 'mag': 0, 'dex': 0, 'spd': 0, 'lck': 0, 'def': 0, 'res': 0, 'cha': 0 },
       classChanges: []
     };
   }
@@ -68,9 +71,11 @@ class App extends React.Component {
   }
 
   // Passed to BaseStats for the 'Apply' button.
-  applyBaseStats = () => {
+  applyBaseStats = (newBaseLevel, newBaseStats) => {
 
     this.setState({
+      characterBaseLevel: newBaseLevel,
+      characterBaseStats: newBaseStats,
       baseStatsOpen: false
     });
   }
@@ -121,6 +126,8 @@ class App extends React.Component {
         <Main
           characterId={characterId}
           character={character}
+          characterBaseLevel={this.state.characterBaseLevel}
+          characterBaseStats={this.state.characterBaseStats}
           classChanges={this.state.classChanges}
           resetFlag={this.state.resetFlag}
           openCharacterSelectFunc={this.openCharacterSelect}
