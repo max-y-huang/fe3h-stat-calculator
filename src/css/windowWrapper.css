@@ -27,10 +27,21 @@
   position: relative;
 }
 
-.header-segment > div:nth-child(1) > div {
+.header-segment > div:nth-child(1) > *:nth-child(1) {
 
   position: absolute;
   top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  height: 3em;
+}
+
+.header-segment > div:nth-child(1) > *:nth-child(2) {
+
+  position: absolute;
+  top: 50%;
+  left: calc(3em + 0.5em);  /* width of element to the left is 3em */
   transform: translateY(-50%);
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon, Grid, Input, Label, Header, Segment } from 'semantic-ui-react';
+import { Button, Icon, Grid, Input, Label, Header, Segment, Divider } from 'semantic-ui-react';
 
 import WindowWrapper from './WindowWrapper';
 
@@ -135,16 +135,18 @@ class Main extends React.Component {
 
   render() {
 
+    let characterId = this.props.characterId;
     let character = this.props.character;
 
     return (
       <WindowWrapper
+        headerIconName={characterId}
         headerTitle={
           <Header>{character['name']}</Header>
         }
         headerButtons={
           <Button color='blue' icon onClick={this.props.openCharacterSelectFunc}>
-            <Icon name='edit' />
+            <Icon name='exchange' />
           </Button>
         }
         body={
@@ -152,11 +154,16 @@ class Main extends React.Component {
           <div>
 
             <Segment>
-              <Label attached='top left' color='yellow'>Input</Label>
-              <Input onChange={this.setFinalLevel} fluid defaultValue={1} labelPosition='left' style={{marginBottom: '1em'}}> {/* TODO: Remove inline style */}
+              <Label attached='top left' color='yellow'>Information</Label>
+              <Input onChange={this.setFinalLevel} fluid defaultValue={1} labelPosition='left'>
                 <Label color='blue'>Level</Label>
                 <input ref={this.levelInputRef} />
               </Input>
+              <Divider />
+              <Button icon labelPosition='left' color='blue' fluid onClick={this.props.openBaseStatsFunc} style={{marginBottom: '1em'}}> {/* Passed from App */}
+                <Icon name='edit' />
+                Joining Information
+              </Button>
               <Button icon labelPosition='left' color='blue' fluid onClick={this.props.openClassChangeFunc}> {/* Passed from App */}
                 <Icon name='edit' />
                 Class Changes

@@ -33,7 +33,8 @@ class WindowWrapper extends React.Component {
 
           <Segment className='header-segment'>
             <div>
-              <div>{this.props.headerTitle}</div> {/* Vertically centered in parent div */}
+              <img src={'images/characters/' + this.props.headerIconName + '.png'} alt='' />
+              <div>{this.props.headerTitle}</div>
             </div>
 
             <div>{this.props.headerButtons}</div>

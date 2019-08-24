@@ -21,10 +21,12 @@ class ClassChange extends React.Component {
 
   render() {
 
+    let characterId = this.props.characterId;
     let character = this.props.character;
 
     return (
       <WindowWrapper
+        headerIconName={characterId}
         headerTitle={
           <Header>{character['name']}</Header>
         }
