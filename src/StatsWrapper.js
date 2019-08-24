@@ -13,8 +13,7 @@ class StatsWrapper extends React.Component {
 
     super(props);
 
-    this.startingLevelRef = React.createRef();
-    this.finalLevelRef = React.createRef();
+    this.levelInputRef = React.createRef();
 
     this.state = {
       finalLevel: 1
@@ -23,12 +22,8 @@ class StatsWrapper extends React.Component {
 
   onReset = () => {
 
-    // Reset starting level.
-    this.props.setStartingLevelFunc(1);
-    this.startingLevelRef.current.value = 1;
-
-    // Reset final level.
-    this.finalLevelRef.current.value = 1;
+    // reset final level
+    this.levelInputRef.current.value = 1;
     this.setState({
       finalLevel: 1
     });
@@ -56,24 +51,11 @@ class StatsWrapper extends React.Component {
 
     // Add class change for initial class.
     classChanges.splice(0, 0, {
-      level: this.props.startingLevel,
+      level: 1,
       class: character['class']
     });
 
     return classChanges;
-  }
-
-  getAverageBaseStat = (stat) => {
-
-    let classChanges = this.formatClassChanges();
-    let character = this.props.character;
-    let startingClass = classes[classChanges[0]['class']];
-
-    let growthModifier = 0.01 * (character['growths'][stat] + startingClass['growths'][stat]);
-
-    let val = character['bases'][stat] + growthModifier * (this.props.startingLevel - 1);
-
-    return val;
   }
 
   // Passed to StatDisplay as 'value' prop
@@ -88,7 +70,7 @@ class StatsWrapper extends React.Component {
     }
     
     // Start with the character base stat
-    let val = this.getAverageBaseStat(stat);
+    let val = character['bases'][stat];
 
     // Loop through all class intervals. The last index is a final level placeholder.
     for (let i = 0; i < classChanges.length - 1; i++) {
@@ -113,16 +95,8 @@ class StatsWrapper extends React.Component {
       val += growthModifier * levelDifference;
     }
 
-    // Add class bonuses.
-    val += classes[classChanges[classChanges.length - 2]['class']]['boosts'][stat];
-
     // Round to two decimals.
     return Math.round(val * 100) / 100;
-  }
-
-  setStartingLevel = (e, { name, value }) => {
-
-    this.props.setStartingLevelFunc(value);
   }
 
   setFinalLevel = (e, { name, value }) => {
@@ -145,7 +119,7 @@ class StatsWrapper extends React.Component {
       return (
         <Grid.Column key={i}>
           {col.map((cell) => {
-            return <StatDisplay key={cell} label={cell} defaultValue={this.getAverageStat(cell)} />
+            return <StatDisplay key={cell} label={cell} value={this.getAverageStat(cell)} />
           })}
         </Grid.Column>
       );
@@ -179,13 +153,9 @@ class StatsWrapper extends React.Component {
 
             <Segment>
               <Label attached='top left' color='yellow'>Input</Label>
-              <Input onChange={this.setStartingLevel} fluid defaultValue={1} labelPosition='left' style={{marginBottom: '1em'}}> {/* TODO: Remove inline style */}
-                <Label color='blue'>Join Level</Label>
-                <input ref={this.startingLevelRef} />
-              </Input>
               <Input onChange={this.setFinalLevel} fluid defaultValue={1} labelPosition='left' style={{marginBottom: '1em'}}> {/* TODO: Remove inline style */}
-                <Label color='blue'>Current Level</Label>
-                <input ref={this.finalLevelRef} />
+                <Label color='blue'>Level</Label>
+                <input ref={this.levelInputRef} />
               </Input>
               <Button icon labelPosition='left' color='blue' fluid onClick={this.props.openClassChangeFunc}> {/* Passed from App */}
                 <Icon name='edit' />
@@ -209,31 +179,11 @@ class StatsWrapper extends React.Component {
 
 class StatDisplay extends React.Component {
 
-  constructor(props) {
-
-    super(props);
-
-    this.inputRef = React.createRef();
-  }
-
-  componentDidMount() {
-
-    this.inputRef.current.value = this.props.defaultValue;
-  }
-
-  componentDidUpdate(prevProps, prevStates) {
-
-    if (prevProps.defaultValue !== this.props.defaultValue) {
-      this.inputRef.current.value = this.props.defaultValue;
-    }
-  }
-
   render() {
-
     return (
       <Input className='stat-display' labelPosition='left' fluid>
         <Label color='pink'>{this.props.label}</Label>
-        <input ref={this.inputRef} readOnly={this.props.isReadOnly} />
+        <input value={this.props.value} className='no-select' readOnly />
       </Input>
     );
   }

@@ -21,7 +21,6 @@ class App extends React.Component {
       classChangeOpen: false,
       characterSelectOpen: false,
       characterId: 'byleth',
-      characterStartingLevel: 1,
       classChanges: []
     };
   }
@@ -70,13 +69,6 @@ class App extends React.Component {
     });
   }
 
-  setStartingLevel = (newLevel) => {
-
-    this.setState({
-      characterStartingLevel: newLevel
-    });
-  }
-
   render() {
 
     let character = characters[this.state.characterId];
@@ -84,28 +76,14 @@ class App extends React.Component {
     return (
       <div>
         <Sidebar className='side-bar' animation='overlay' visible={this.state.classChangeOpen} style={{backgroundColor: '#f5f5f5'}}>
-          <ClassChangeWrapper
-            character={character}
-            resetFlag={this.state.resetFlag}
-            appliedFunc={this.applyClassChanges}
-          />
+          <ClassChangeWrapper character={character} resetFlag={this.state.resetFlag} appliedFunc={this.applyClassChanges} />
         </Sidebar>
 
         <Sidebar className='side-bar' animation='overlay' visible={this.state.characterSelectOpen} style={{backgroundColor: '#ffffff'}}>
-          <CharacterSelect
-            appliedFunc={this.applyCharacterSelect}
-          />
+          <CharacterSelect appliedFunc={this.applyCharacterSelect} />
         </Sidebar>
 
-        <StatsWrapper
-          character={character}
-          startingLevel={this.state.characterStartingLevel}
-          classChanges={this.state.classChanges}
-          resetFlag={this.state.resetFlag}
-          openCharacterSelectFunc={this.openCharacterSelect}
-          openClassChangeFunc={this.openClassChange}
-          setStartingLevelFunc={this.setStartingLevel}
-        />
+        <StatsWrapper character={character} classChanges={this.state.classChanges} resetFlag={this.state.resetFlag} openCharacterSelectFunc={this.openCharacterSelect} openClassChangeFunc={this.openClassChange} />
       </div>
     );
   }
