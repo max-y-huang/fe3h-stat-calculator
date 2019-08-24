@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Button, Icon } from 'semantic-ui-react';
+import { Button, Icon } from 'semantic-ui-react';
 
 import WindowWrapper from './WindowWrapper';
 import ClassChangeInput from './ClassChangeInput';
@@ -23,13 +23,12 @@ class ClassChange extends React.Component {
 
     let characterId = this.props.characterId;
     let character = this.props.character;
+    let characterName = this.props.character['name'];
 
     return (
       <WindowWrapper
-        headerIconName={characterId}
-        headerTitle={
-          <Header>{character['name']}</Header>
-        }
+        characterId={characterId}
+        characterName={characterName}
         headerButtons={
           <Button icon color='blue' onClick={this.onApply}>
             <Icon name='check' />
