@@ -2,7 +2,7 @@
 import React from 'react';
 import { Sidebar } from 'semantic-ui-react';
 
-import StatsWrapper from './StatsWrapper';
+import MainWrapper from './MainWrapper';
 import ClassChangeWrapper from './ClassChangeWrapper';
 import CharacterSelect from './CharacterSelect';
 
@@ -32,7 +32,7 @@ class App extends React.Component {
     }));
   }
 
-  // Passed to StatsWrapper for 'Edit Class Changes' button.
+  // Passed to MainWrapper for 'Edit Class Changes' button.
   openClassChange = () => {
 
     this.setState({
@@ -76,14 +76,26 @@ class App extends React.Component {
     return (
       <div>
         <Sidebar className='side-bar' animation='overlay' visible={this.state.classChangeOpen} style={{backgroundColor: '#f5f5f5'}}>
-          <ClassChangeWrapper character={character} resetFlag={this.state.resetFlag} appliedFunc={this.applyClassChanges} />
+          <ClassChangeWrapper
+            character={character}
+            resetFlag={this.state.resetFlag}
+            appliedFunc={this.applyClassChanges}
+          />
         </Sidebar>
 
         <Sidebar className='side-bar' animation='overlay' visible={this.state.characterSelectOpen} style={{backgroundColor: '#ffffff'}}>
-          <CharacterSelect appliedFunc={this.applyCharacterSelect} />
+          <CharacterSelect
+            appliedFunc={this.applyCharacterSelect}
+          />
         </Sidebar>
 
-        <StatsWrapper character={character} classChanges={this.state.classChanges} resetFlag={this.state.resetFlag} openCharacterSelectFunc={this.openCharacterSelect} openClassChangeFunc={this.openClassChange} />
+        <MainWrapper
+          character={character}
+          classChanges={this.state.classChanges}
+          resetFlag={this.state.resetFlag}
+          openCharacterSelectFunc={this.openCharacterSelect}
+          openClassChangeFunc={this.openClassChange}
+        />
       </div>
     );
   }

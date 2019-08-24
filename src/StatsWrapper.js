@@ -3,11 +3,11 @@ import { Button, Icon, Grid, Input, Label, Header, Segment } from 'semantic-ui-r
 
 import WindowWrapper from './WindowWrapper';
 
-import './css/statsWrapper.css';
+import './css/mainWrapper.css';
 
 import classes from './data/classes.json';
 
-class StatsWrapper extends React.Component {
+class MainWrapper extends React.Component {
 
   constructor(props) {
 
@@ -189,4 +189,4 @@ class StatDisplay extends React.Component {
   }
 }
 
-export default StatsWrapper;
+export default MainWrapper;
