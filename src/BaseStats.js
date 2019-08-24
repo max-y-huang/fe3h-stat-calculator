@@ -42,6 +42,7 @@ class BaseStats extends React.Component {
         continue;
       }
 
+      // Remove class bonuses from base stats
       modifiedBaseStats[stat] = baseStats[stat] - baseClass['boosts'][stat];
     }
     

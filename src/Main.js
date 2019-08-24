@@ -76,10 +76,7 @@ class Main extends React.Component {
     for (let i = 0; i < classChanges.length - 1; i++) {
 
       // Increase val to class base stat (if applicable).
-      let classBase = classes[classChanges[i]['class']]['bases'][stat];
-      if (val < classBase) {
-        val = classBase;
-      }
+      val = Math.max(val, classes[classChanges[i]['class']]['bases'][stat]);
 
       // Get growth modifier from character and class growth rate.
       let characterGrowth = character['growths'][stat];
@@ -94,6 +91,9 @@ class Main extends React.Component {
       // Add average stat growth over class interval.
       val += growthModifier * levelDifference;
     }
+
+    // Add class bonuses.
+    val += classes[classChanges[classChanges.length - 2]['class']]['boosts'][stat];
 
     // Round to two decimals.
     return Math.round(val * 100) / 100;
