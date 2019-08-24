@@ -2,8 +2,8 @@
 import React from 'react';
 import { Sidebar } from 'semantic-ui-react';
 
-import MainWrapper from './MainWrapper';
-import ClassChangeWrapper from './ClassChangeWrapper';
+import Main from './Main';
+import ClassChange from './ClassChange';
 import CharacterSelect from './CharacterSelect';
 
 import './css/app.css';
@@ -32,7 +32,7 @@ class App extends React.Component {
     }));
   }
 
-  // Passed to MainWrapper for 'Edit Class Changes' button.
+  // Passed to Main for 'Edit Class Changes' button.
   openClassChange = () => {
 
     this.setState({
@@ -48,7 +48,7 @@ class App extends React.Component {
     });
   }
 
-  // Passed to ClassChangeWrapper for the 'Apply' button.
+  // Passed to ClassChange for the 'Apply' button.
   applyClassChanges = (newClassChanges) => {
 
     this.setState({
@@ -76,7 +76,7 @@ class App extends React.Component {
     return (
       <div>
         <Sidebar className='side-bar' animation='overlay' visible={this.state.classChangeOpen} style={{backgroundColor: '#f5f5f5'}}>
-          <ClassChangeWrapper
+          <ClassChange
             character={character}
             resetFlag={this.state.resetFlag}
             appliedFunc={this.applyClassChanges}
@@ -89,7 +89,7 @@ class App extends React.Component {
           />
         </Sidebar>
 
-        <MainWrapper
+        <Main
           character={character}
           classChanges={this.state.classChanges}
           resetFlag={this.state.resetFlag}

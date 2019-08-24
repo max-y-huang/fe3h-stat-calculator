@@ -4,7 +4,7 @@ import { Header, Button, Icon } from 'semantic-ui-react';
 import WindowWrapper from './WindowWrapper';
 import ClassChangeInput from './ClassChangeInput';
 
-class ClassChangeWrapper extends React.Component {
+class ClassChange extends React.Component {
 
   constructor(props) {
 
@@ -41,4 +41,4 @@ class ClassChangeWrapper extends React.Component {
   }
 }
 
-export default ClassChangeWrapper;
+export default ClassChange;
