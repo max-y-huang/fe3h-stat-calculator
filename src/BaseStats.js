@@ -156,7 +156,7 @@ class BaseStats extends React.Component {
 
             <Segment>
               <Label attached='top left' color='yellow'>Joining Information</Label>
-              <Input onChange={this.setBaseLevel} fluid defaultValue={1} labelPosition='left'>
+              <Input type='number' onChange={this.setBaseLevel} fluid defaultValue={1} labelPosition='left'>
                 <Label color='blue'>Level</Label>
                 <input ref={this.levelInputRef} />
               </Input>
@@ -211,7 +211,7 @@ class StatDisplay extends React.Component {
 
   render() {
     return (
-      <Input className='stat-display' onChange={this.setValue} labelPosition='left' fluid>
+      <Input type='number' className='stat-display' onChange={this.setValue} labelPosition='left' fluid>
         <Label color='blue'>{this.props.label}</Label>
         <input ref={this.inputRef} />
       </Input>

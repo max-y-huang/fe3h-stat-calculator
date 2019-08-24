@@ -33,7 +33,18 @@ class Main extends React.Component {
 
     let classChanges = this.props.classChanges.slice();
     let character = this.props.character;
+    let baseLevel = this.props.characterBaseLevel;
     let finalLevel = this.state.finalLevel;
+
+    // Remove class changes before base level.
+    let spliceLength = classChanges.length;
+    for (let i = 0; i < classChanges.length; i++) {
+      if (classChanges[i]['level'] >= baseLevel) {
+        spliceLength = i;
+        break;
+      }
+    }
+    classChanges.splice(0, spliceLength);
     
     // Remove class changes after final level.
     for (let i = 0; i < classChanges.length; i++) {
@@ -51,7 +62,7 @@ class Main extends React.Component {
 
     // Add class change for initial class.
     classChanges.splice(0, 0, {
-      level: this.props.characterBaseLevel,
+      level: baseLevel,
       class: character['class']
     });
 
@@ -158,7 +169,7 @@ class Main extends React.Component {
 
             <Segment>
               <Label attached='top left' color='yellow'>Information</Label>
-              <Input onChange={this.setFinalLevel} fluid defaultValue={1} labelPosition='left'>
+              <Input type='number' onChange={this.setFinalLevel} fluid defaultValue={1} labelPosition='left'>
                 <Label color='blue'>Level</Label>
                 <input ref={this.levelInputRef} />
               </Input>

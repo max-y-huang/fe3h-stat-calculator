@@ -18,6 +18,18 @@ code {
     monospace;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+
+  -moz-appearance:textfield;
+}
+
 .no-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
