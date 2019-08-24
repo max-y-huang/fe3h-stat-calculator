@@ -84,6 +84,17 @@ class BaseStats extends React.Component {
     });
   }
 
+  setBaseStatValue = (stat, val) => {
+
+    let tempBaseStats = this.state.baseStats;
+
+    tempBaseStats[stat] = val;
+
+    this.setState({
+      baseStats: tempBaseStats
+    });
+  }
+
   renderStatDisplays = () => {
     
     // Outer array = columns, inner arrays = rows.
@@ -97,7 +108,9 @@ class BaseStats extends React.Component {
       return (
         <Grid.Column key={i}>
           {col.map((cell) => {
-            return <StatDisplay key={cell} label={cell} defaultValue={this.state.baseStats[cell]} />
+            return <StatDisplay key={cell} label={cell} defaultValue={this.state.baseStats[cell]}
+              setBaseStatValueFunc={this.setBaseStatValue}
+            />
           })}
         </Grid.Column>
       );
@@ -169,26 +182,32 @@ class StatDisplay extends React.Component {
     };
   }
 
-  setValue = (val) => {
+  setValue = (e, { name, value }) => {
 
-    this.inputRef.current.value = val;
+    this.inputRef.current.value = value;
+    this.props.setBaseStatValueFunc(this.props.label, value);
+  }
+
+  resetValue = () => {
+
+    this.inputRef.current.value = this.props.defaultValue;
   }
 
   componentDidMount() {
 
-    this.setValue(this.props.defaultValue);
+    this.resetValue();
   }
 
   componentDidUpdate(prevProps, prevStates) {
 
     if (prevProps.defaultValue !== this.props.defaultValue) {
-      this.setValue(this.props.defaultValue);
+      this.resetValue();
     }
   }
 
   render() {
     return (
-      <Input className='stat-display' labelPosition='left' fluid>
+      <Input className='stat-display' onChange={this.setValue} labelPosition='left' fluid>
         <Label color='blue'>{this.props.label}</Label>
         <input ref={this.inputRef} />
       </Input>
