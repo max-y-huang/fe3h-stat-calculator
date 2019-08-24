@@ -20,6 +20,7 @@
 
   display: flex;
   justify-content: space-between;
+  padding-left: 0 !important;
 }
 
 .header-segment > div:nth-child(1) {
@@ -30,18 +31,17 @@
 .header-segment > div:nth-child(1) > *:nth-child(1) {
 
   position: absolute;
-  top: 50%;
+  bottom: -1em;  /* Reverse padding. */
   left: 0;
-  transform: translateY(-50%);
 
-  height: 3em;
+  height: calc(100% + 2em + 1em);  /* Outer padding of 2em, upper margin of 1em. */
 }
 
 .header-segment > div:nth-child(1) > *:nth-child(2) {
 
   position: absolute;
   top: 50%;
-  left: calc(3em + 0.5em);  /* width of element to the left is 3em */
+  left: 6.5em;  /* Spacing for image */
   transform: translateY(-50%);
 }
 
