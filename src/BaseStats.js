@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon, Input, Label, Segment, Grid, Divider } from 'semantic-ui-react';
+import { Button, Icon, Input, Label, Segment, Grid, Divider, Checkbox } from 'semantic-ui-react';
 
 import WindowWrapper from './WindowWrapper';
 
@@ -15,7 +15,8 @@ class BaseStats extends React.Component {
 
     this.state = {
       baseLevel: 1,
-      baseStats: { 'hp': 0, 'str': 0, 'mag': 0, 'dex': 0, 'spd': 0, 'lck': 0, 'def': 0, 'res': 0, 'cha': 0 }
+      baseStats: { 'hp': 0, 'str': 0, 'mag': 0, 'dex': 0, 'spd': 0, 'lck': 0, 'def': 0, 'res': 0, 'cha': 0 },
+      includeStatBoosts: false
     };
   }
 
@@ -42,8 +43,11 @@ class BaseStats extends React.Component {
         continue;
       }
 
-      // Remove class bonuses from base stats
-      modifiedBaseStats[stat] = baseStats[stat] - baseClass['boosts'][stat];
+      modifiedBaseStats[stat] = baseStats[stat];
+      // Remove class bonuses from base stats (if applicable).
+      if (this.state.includeStatBoosts) {
+        modifiedBaseStats[stat] -= baseClass['boosts'][stat];
+      }
     }
     
     this.props.appliedFunc(this.state.baseLevel, modifiedBaseStats, close);  // Passed from App.
@@ -72,7 +76,9 @@ class BaseStats extends React.Component {
 
     let val = character['bases'][stat] + growthModifier * (this.state.baseLevel - 1);
     val = Math.max(val, baseClass['bases'][stat]);
-    val += baseClass['boosts'][stat];
+    if (this.state.includeStatBoosts) {
+      val += baseClass['boosts'][stat];
+    }
 
     return Math.round(val);
   }
@@ -81,6 +87,13 @@ class BaseStats extends React.Component {
 
     this.setState({
       baseLevel: value
+    });
+  }
+
+  setIncludeStatBoosts = (e, { checked }) => {
+
+    this.setState({
+      includeStatBoosts: checked
     });
   }
 
@@ -142,6 +155,11 @@ class BaseStats extends React.Component {
     let characterId = this.props.characterId;
     let characterName = this.props.character['name'];
 
+    let includeStatBoostsLabel = [
+      [<div key='title'>{'Include class boosts in base stats'}</div>],
+      [<div key='subtitle' style={{color: 'rgba(0, 0, 0, 0.68)'}}>{'Assumes unit\'s default class'}</div>]  // Same colour as card description.
+    ];
+
     return (
       <WindowWrapper
         characterId={characterId}
@@ -164,6 +182,8 @@ class BaseStats extends React.Component {
               <div className='stat-grid-wrapper'>
                 <Grid columns={2}>{this.renderStatDisplays()}</Grid>
               </div>
+              <Divider />
+              <Checkbox toggle label={includeStatBoostsLabel} onChange={this.setIncludeStatBoosts} />
             </Segment>
 
           </div>
