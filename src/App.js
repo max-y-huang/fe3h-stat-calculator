@@ -7,6 +7,7 @@ import ClassChange from './ClassChange';
 import BaseStats from './BaseStats';
 import CharacterSelect from './CharacterSelect';
 
+import 'semantic-ui-css/semantic.min.css';
 import './css/app.css';
 
 import characters from './data/characters.json';
