@@ -4,7 +4,6 @@ import { Button, Icon, Grid, Input, Label, Segment, Divider } from 'semantic-ui-
 import WindowWrapper from './WindowWrapper';
 
 import './css/main.css';
-import './css/statGrid.css';
 
 import classes from './data/classes.json';
 

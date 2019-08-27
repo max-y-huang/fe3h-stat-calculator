@@ -3,9 +3,6 @@ import { Button, Icon, Input, Label, Segment, Grid, Divider, Checkbox } from 'se
 
 import WindowWrapper from './WindowWrapper';
 
-import './css/baseStats.css';
-import './css/statGrid.css';
-
 import classes from './data/classes.json';
 
 class BaseStats extends React.Component {
