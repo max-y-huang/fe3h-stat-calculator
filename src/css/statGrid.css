@@ -1,0 +1,26 @@
+
+.stat-grid-wrapper > .grid > .column:nth-child(1) {
+
+  padding-right: 0.5em;
+}
+
+.stat-grid-wrapper > .grid > .column:nth-child(2) {
+
+  padding-left: 0.5em;
+}
+
+.stat-grid-wrapper > .grid > .column > * {
+
+  margin-bottom: 0.75em;
+}
+
+.stat-grid-wrapper > .grid > .column > *:last-child {
+
+  margin-bottom: 0;
+}
+
+.stat-display > .label {
+
+  text-transform: capitalize !important;
+  width: 4em;
+}
