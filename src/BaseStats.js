@@ -158,8 +158,8 @@ class BaseStats extends React.Component {
     let characterName = this.props.character['name'];
 
     let includeStatBoostsLabel = [
-      [<div key='title'>{'Include class boosts in base stats'}</div>],
-      [<div key='subtitle' style={{color: 'rgba(0, 0, 0, 0.68)'}}>{'Assumes unit\'s default class'}</div>]  // Same colour as card description.
+      [<div key='title'>{'Include class bonuses in base stats'}</div>],
+      [<div key='subtitle' style={{color: 'rgba(0, 0, 0, 0.68)'}}>{'Assumes unit\'s default lvl 1 class'}</div>]  // Same colour as card description.
     ];
 
     return (
