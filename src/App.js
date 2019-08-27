@@ -91,6 +91,11 @@ class App extends React.Component {
     }));
   }
 
+  sideBarOpen = () => {
+
+    return this.state.classChangeOpen || this.state.baseStatsOpen || this.state.characterSelectOpen;
+  }
+
   render() {
     
     let characterId = this.state.characterId;
@@ -122,17 +127,19 @@ class App extends React.Component {
           />
         </Sidebar>
 
-        <Main
-          characterId={characterId}
-          character={character}
-          characterBaseLevel={this.state.characterBaseLevel}
-          characterBaseStats={this.state.characterBaseStats}
-          classChanges={this.state.classChanges}
-          resetFlag={this.state.resetFlag}
-          openCharacterSelectFunc={this.openCharacterSelect}
-          openClassChangeFunc={this.openClassChange}
-          openBaseStatsFunc={this.openBaseStats}
-        />
+        <div className='main-container' style={{overflow: (this.sideBarOpen() ? 'hidden' : 'auto')}}>
+          <Main
+            characterId={characterId}
+            character={character}
+            characterBaseLevel={this.state.characterBaseLevel}
+            characterBaseStats={this.state.characterBaseStats}
+            classChanges={this.state.classChanges}
+            resetFlag={this.state.resetFlag}
+            openCharacterSelectFunc={this.openCharacterSelect}
+            openClassChangeFunc={this.openClassChange}
+            openBaseStatsFunc={this.openBaseStats}
+          />
+        </div>
       </div>
     );
   }
