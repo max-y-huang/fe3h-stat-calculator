@@ -168,10 +168,6 @@ class Main extends React.Component {
 
           <div>
 
-            <Button onClick={() => {
-              alert(JSON.stringify(this.formatClassChanges()));
-            }}>Changes</Button>
-
             <Segment>
               <Label attached='top left' color='yellow'>Information</Label>
               <Input type='number' onChange={this.setFinalLevel} fluid defaultValue={1} labelPosition='left'>
