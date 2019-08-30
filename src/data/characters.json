@@ -359,8 +359,8 @@
       "lck": 6, "def": 5, "res": 2, "cha": 4
     },
     "growths": {
-      "hp": 35, "str": 20, "mag": 15, "dex": 40, "spd": 40,
-      "lck": 30, "def": 10, "res": 10, "cha": 15
+      "hp": 55, "str": 40, "mag": 35, "dex": 60, "spd": 60,
+      "lck": 50, "def": 30, "res": 30, "cha": 35
     }
   },
 

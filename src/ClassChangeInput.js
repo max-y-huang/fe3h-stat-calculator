@@ -46,7 +46,7 @@ class ClassChangeInput extends React.Component {
 
     // Sort values ascending.
     return ret.sort((a, b) => {
-      return a['level'] > b['level']
+      return a['level'] - b['level']
     });
   }
 
