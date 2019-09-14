@@ -3,3 +3,8 @@
 
   width: 100% !important;
 }
+
+.segment {
+
+  box-shadow: none !important;
+}

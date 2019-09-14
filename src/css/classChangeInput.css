@@ -1,99 +1,26 @@
 
-.segment {
+.class-change-input-field {
 
-  box-shadow: none !important;
-}
-
-.class-change-grid {
-
-  margin: 0 !important;
-  height: 100%;
   display: flex;
+  margin-bottom: 1em;
 }
 
-.class-change-grid > .column {
+.class-change-input-field > div:nth-child(1) {
 
-  padding-top: 1px !important;
-  padding-bottom: 1px !important;
-
-  height: 100%;
-}
-
-.class-change-grid > .column:nth-child(1) {
-
-  padding: 0 !important;
-  padding-left: 1px !important;
-
-  height: 100%;
-  flex: 0;
-  flex-basis: calc(4.5em + 2em + 2px);  /* 2em for segment padding, 2px for border padding */
-}
-
-.class-change-grid > .column:nth-child(1) > .segment {
-
-  height: 100%;
-}
-
-.class-change-grid > .column:nth-child(2) {
-
-  padding: 0 !important;
-  padding-right: 1px !important;
-  padding-left: 1em !important;
-
-  height: 100%;
   flex: 1;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
-.range-container {
+.class-change-input-field > div:nth-child(2) {
 
-  display: inline-block;
-
-  padding-top: 1em;
-  padding-bottom: 1em;
-
-  width: 4.5em;
-  height: 100%;
+  flex: 0;
 }
 
-.range {
+.class-change-input-field > div:nth-child(2) > div {
 
-  display: flex;
-  height: 100%;
+  white-space: nowrap;
 }
 
-.range .track {
-
-  background-color: rgba(224, 225, 226);
-  border: 1px solid rgba(224, 225, 226);
-  border-radius: .28571429rem;
-
-  height: 100%;
-  align-self: center;
-
-  width: 0.5em;
-}
-
-.range .thumb {
-
-  height: 1.25em;
-  width: 1.25em;
-
-  border-radius: 0.35em;
-  background-color: #2185d0;
-
-  display: flex;
-}
-
-.range .thumb .label {
-
-  position: absolute !important;
-  top: 50% !important;
-  left: 1.5em !important;
-  transform: translate(0, -50%) !important;
-
-  width: 3em;
-
-  text-align: center;
+.class-change-input-field > div:nth-child(2) > div > span {
+  
+  margin: 0 1em;
 }
