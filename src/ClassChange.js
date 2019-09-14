@@ -16,6 +16,7 @@ class ClassChange extends React.Component {
   onApply = () => {
     
     let values = this.classChangeRef.current.getValues();
+    console.log(values);
     this.props.appliedFunc(values);  // Passed from App.
   }
 
