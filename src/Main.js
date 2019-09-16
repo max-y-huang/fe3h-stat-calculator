@@ -70,8 +70,23 @@ class Main extends React.Component {
     return classChanges;
   }
 
+  getMonteCarloAverageStat = (stat, n, percentile) => {
+
+    let dataList = [];
+
+    for (let i = 0; i < n; i++) {
+      dataList.push(this.getAverageStat(stat, false));
+    }
+
+    dataList.sort((a, b) => {
+      return a - b
+    });
+
+    return dataList[Math.round(n / 100 * percentile)];
+  }
+
   // Passed to StatDisplay as 'value' prop
-  getAverageStat = (stat) => {
+  getAverageStat = (stat, fixed=true) => {
 
     let character = this.props.character;
     let classChanges = this.formatClassChanges();
@@ -101,7 +116,14 @@ class Main extends React.Component {
       let levelDifference = levelB - levelA; 
       
       // Add average stat growth over class interval.
-      val += growthModifier * levelDifference;
+      if (fixed) {
+        val += growthModifier * levelDifference;
+      }
+      else {
+        for (let i = 0; i < levelDifference; i++) {
+          val += (Math.random() < growthModifier) ? 1 : 0;
+        }
+      }
     }
 
     // Add class bonuses.
@@ -132,6 +154,7 @@ class Main extends React.Component {
         <Grid.Column key={i}>
           {col.map((cell) => {
             return <StatDisplay key={cell} label={cell} value={this.getAverageStat(cell)} />
+            //return <StatDisplay key={cell} label={cell} value={this.getMonteCarloAverageStat(cell, 100000, 50)} />
           })}
         </Grid.Column>
       );
