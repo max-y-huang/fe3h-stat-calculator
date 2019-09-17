@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Icon, Grid, Input, Label, Segment, Divider } from 'semantic-ui-react';
+import { Range } from 'react-range';
 
 import WindowWrapper from './WindowWrapper';
 
@@ -17,7 +18,9 @@ class Main extends React.Component {
     this.levelInputRef = React.createRef();
 
     this.state = {
-      finalLevel: 1
+      finalLevel: 1,
+      percentile: 50,
+      percentileIterations: 100
     }
   }
 
@@ -140,6 +143,20 @@ class Main extends React.Component {
     });
   }
 
+  setPercentile = (newPercentile) => {
+
+    this.setState({
+      percentile: newPercentile
+    });
+  }
+
+  setPercentileIterations = (newPercentileIterations) => {
+
+    this.setState({
+      percentileIterations: newPercentileIterations
+    });
+  }
+
   renderStatDisplays = () => {
     
     // Outer array = columns, inner arrays = rows.
@@ -153,8 +170,11 @@ class Main extends React.Component {
       return (
         <Grid.Column key={i}>
           {col.map((cell) => {
-            return <StatDisplay key={cell} label={cell} value={this.getAverageStat(cell)} />
-            //return <StatDisplay key={cell} label={cell} value={this.getMonteCarloAverageStat(cell, 100000, 50)} />
+
+            if (this.state.percentile === 50) {
+              return <StatDisplay key={cell} label={cell} value={this.getAverageStat(cell)} />
+            }
+            return <StatDisplay key={cell} label={cell} value={this.getMonteCarloAverageStat(cell, this.state.percentileIterations, this.state.percentile)} />
           })}
         </Grid.Column>
       );
@@ -209,10 +229,15 @@ class Main extends React.Component {
             </Segment>
 
             <Segment>
-              <Label attached='top left' color='yellow'>Average Stats</Label>
+              <Label attached='top left' color='yellow'>Expected Stats</Label>
               <div className='stat-grid-wrapper'>
                 <Grid columns={2}>{this.renderStatDisplays()}</Grid>
               </div>
+              <Divider />
+              <PercentileInput
+                setPercentileFunc={this.setPercentile}
+                setPercentileIterationsFunc={this.setPercentileIterations}
+              />
             </Segment>
 
           </div>
@@ -230,6 +255,66 @@ class StatDisplay extends React.Component {
         <Label color='pink'>{this.props.label}</Label>
         <input value={this.props.value} className='no-select' readOnly />
       </Input>
+    );
+  }
+}
+
+class PercentileInput extends React.Component {
+
+  constructor(props) {
+
+    super(props);
+
+    this.state = {
+      values: [ 50 ]
+    };
+  }
+
+  setPercentileIterations = (e, { name, value }) => {
+
+    this.props.setPercentileIterationsFunc(value);
+  }
+
+  componentDidUpdate(prevProps, prevStates) {
+
+    if (prevStates.values[0] !== this.state.values[0]) {
+      this.props.setPercentileFunc(this.state.values[0]);
+    }
+  }
+  
+  render() {
+
+    return (
+      <div className='percentile-slider'>
+
+        <div>
+          <Range
+            step={25} min={25} max={75}
+            values={this.state.values}
+            onChange={values => this.setState({ values })}
+            renderTrack={({ props, children }) => (
+              <div {...props} style={{...props.style}}>{children}</div>
+            )}
+            renderThumb={({ props }) => (
+              <div {...props} style={{...props.style}}/>
+            )}
+          />
+        </div>
+
+        <div>
+          <div>
+            {this.state.values[0]}th percentile
+          </div>
+          <div style={{color: 'rgba(0, 0, 0, 0.68)', marginBottom: '1em'}}>
+            {(this.state.values[0] === 50) ? 'exact' : 'approximation'}
+          </div>
+          <div>
+            Iterations for approximation:
+            <Input type='number' style={{width: '5em', marginLeft: '1em'}} defaultValue={100} onChange={this.setPercentileIterations} />
+          </div>
+        </div>
+
+      </div>
     );
   }
 }

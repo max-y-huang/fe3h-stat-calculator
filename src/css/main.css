@@ -7,3 +7,37 @@
   left: 0;
   right: 0;
 }
+
+.percentile-slider {
+
+  display: inline-block;
+  width: 100%;
+}
+
+.percentile-slider > div:nth-child(1) {
+
+  width: 8em;
+  margin: 0.643em auto;
+}
+
+.percentile-slider > div:nth-child(1) > div {
+
+  height: 0.214em;
+  border-radius: 0.107em;
+  width: 100%;
+  background-color: rgba(34, 36, 38, 0.15);
+}
+
+.percentile-slider > div:nth-child(1) > div > div {
+
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 50%;
+  background-color: #2185d0;
+}
+
+.percentile-slider > div:nth-child(2) {
+
+  text-align: center;
+  margin-top: 1em;
+}
