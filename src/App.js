@@ -102,7 +102,7 @@ class App extends React.Component {
     let character = characters[characterId];
 
     return (
-      <div>
+      <Sidebar.Pushable as='div'>
         <Sidebar className='side-bar' animation='overlay' visible={this.state.classChangeOpen} style={{backgroundColor: '#f5f5f5'}}>
           <ClassChange
             characterId={characterId}
@@ -127,7 +127,7 @@ class App extends React.Component {
           />
         </Sidebar>
 
-        <div className='main-container' style={{overflow: (this.sideBarOpen() ? 'hidden' : 'auto')}}>
+        <Sidebar.Pusher as='div' className='main-container' style={{overflow: (this.sideBarOpen() ? 'hidden' : 'auto')}}>
           <Main
             characterId={characterId}
             character={character}
@@ -139,8 +139,8 @@ class App extends React.Component {
             openClassChangeFunc={this.openClassChange}
             openBaseStatsFunc={this.openBaseStats}
           />
-        </div>
-      </div>
+        </Sidebar.Pusher>
+      </Sidebar.Pushable>
     );
   }
 }
