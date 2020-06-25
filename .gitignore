@@ -66,3 +66,5 @@ typings/
 
 *.todo
 *.psd
+
+build/
