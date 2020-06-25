@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fe3h-stat-calculator/static/css/main.8c84e784.chunk.css",
+    "main.js": "/fe3h-stat-calculator/static/js/main.ff3aebc2.chunk.js",
+    "main.js.map": "/fe3h-stat-calculator/static/js/main.ff3aebc2.chunk.js.map",
+    "runtime~main.js": "/fe3h-stat-calculator/static/js/runtime~main.76c94542.js",
+    "runtime~main.js.map": "/fe3h-stat-calculator/static/js/runtime~main.76c94542.js.map",
+    "static/js/2.e9dd7cb9.chunk.js": "/fe3h-stat-calculator/static/js/2.e9dd7cb9.chunk.js",
+    "static/js/2.e9dd7cb9.chunk.js.map": "/fe3h-stat-calculator/static/js/2.e9dd7cb9.chunk.js.map",
+    "index.html": "/fe3h-stat-calculator/index.html",
+    "precache-manifest.2e440162d302b77bcdee6b963cb16349.js": "/fe3h-stat-calculator/precache-manifest.2e440162d302b77bcdee6b963cb16349.js",
+    "service-worker.js": "/fe3h-stat-calculator/service-worker.js",
+    "static/css/main.8c84e784.chunk.css.map": "/fe3h-stat-calculator/static/css/main.8c84e784.chunk.css.map"
+  }
+}
