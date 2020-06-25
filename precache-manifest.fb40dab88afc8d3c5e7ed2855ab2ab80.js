@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e07dc4bc1f310c6746f7f6004a318346",
+    "revision": "fb54e41dbdf7f8650d2f6debfe51dc59",
     "url": "/fe3h-stat-calculator/index.html"
   },
   {
-    "revision": "08f795c79e177137fd2d",
+    "revision": "37474c577dc76647762a",
     "url": "/fe3h-stat-calculator/static/css/main.8c84e784.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fe3h-stat-calculator/static/js/2.e9dd7cb9.chunk.js"
   },
   {
-    "revision": "08f795c79e177137fd2d",
-    "url": "/fe3h-stat-calculator/static/js/main.ff3aebc2.chunk.js"
+    "revision": "37474c577dc76647762a",
+    "url": "/fe3h-stat-calculator/static/js/main.3903040d.chunk.js"
   },
   {
     "revision": "af4bbff585e8c2821616",
